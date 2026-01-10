@@ -97,40 +97,66 @@ body {
   /* Siempre visibles dentro de la página */
 }
 
-.silhouette {
-  width: 120px;
-  margin-bottom: 20px;
-  filter: sepia(100%) saturate(300%) hue-rotate(-15deg) brightness(0.6);
-}
-
 #story-text {
-  margin-top: 20px;
-  color: #3d2f1a;
-  /* Texto oscuro para papel claro */
-  font-size: 1.1rem;
-  font-family: 'Playfair Display', serif;
-  line-height: 1.6;
-  max-width: 90%;
+  display: none;
 }
 
+.page-text {
+  margin-top: 15px;
+  color: #3d2f1a;
+  font-size: 1.0rem;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.5;
+  text-align: center;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.silhouette-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 5px;
+}
+
+.silhouette {
+  width: 100px;
+  filter: sepia(1) brightness(0.4);
+}
+
+/* Skip button fix */
 #skip {
   position: absolute;
   bottom: -60px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(201, 162, 77, 0.5);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(201, 162, 77, 0.6);
   color: #C9A24D;
-  padding: 5px 15px;
-  font-size: 0.8rem;
+  padding: 6px 20px;
+  font-size: 0.85rem;
   border-radius: 20px;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  z-index: 1000;
 }
 
 #skip:hover {
-  color: #C9A24D;
+  background: rgba(201, 162, 77, 0.1);
   border-color: #C9A24D;
-  background: rgba(201, 162, 77, 0.05);
+}
+
+/* Responsividad */
+@media (max-width: 480px) {
+  .book {
+    width: 280px;
+    height: 380px;
+  }
+
+  .page-text {
+    font-size: 0.85rem;
+  }
 }
 
 /* COLIBRI */

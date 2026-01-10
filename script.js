@@ -13,18 +13,12 @@ const portal = document.getElementById("portal");
 const pages = document.querySelectorAll(".page");
 
 function showScene(index) {
-  // 1. Si no es la primera, flipeamos la anterior
+  // 1. Flipear la página anterior
   if (index > 0) {
     pages[index - 1].classList.add("flipped");
   }
 
-  // 2. Actualizamos el texto
-  const currentSceneEl = pages[index].querySelector(".scene");
-  if (currentSceneEl) {
-    storyText.textContent = currentSceneEl.dataset.text;
-  }
-
-  // 3. Ajuste de Z-Index
+  // 2. Ajuste de Z-Index para profundidad
   pages.forEach((p, i) => {
     if (i < index) {
       p.style.zIndex = i;
