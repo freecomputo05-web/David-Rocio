@@ -313,8 +313,9 @@ body {
 
 #portal button {
   padding: 22px 60px;
-  font-family: "Pinyon Script", cursive;
-  font-size: 2.6rem;
+  font-family: "Cinzel", serif;
+  font-size: 1.8rem;
+  font-weight: 700;
   background: rgba(0, 0, 0, 0.6);
   color: #C9A24D;
   border: 1px solid rgba(201, 162, 77, 0.6);
@@ -1109,7 +1110,8 @@ h1.names,
 }
 
 h1.names {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
+  /* Reducido un poco más para elegancia */
   /* Aún más pequeño para elegancia */
   margin: 15px 0;
   letter-spacing: 2px;
@@ -1122,7 +1124,7 @@ h1.names {
 
 @media (max-width: 480px) {
   h1.names {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     /* Ajuste para móvil */
   }
 }
