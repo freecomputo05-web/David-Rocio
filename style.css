@@ -180,8 +180,8 @@ body {
   z-index: 9999;
   pointer-events: none;
   display: none;
-  /* Brillo suave para el colibrí blanco */
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+  /* Forzamos que sea blanco puro independientemente del SVG original */
+  filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
   transition: opacity 0.5s ease;
 }
 
