@@ -17,14 +17,10 @@ body {
 }
 
 .scene.active {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.scene.active {
-  display: block;
 }
 
 .silhouette {
