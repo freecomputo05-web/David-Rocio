@@ -10,80 +10,61 @@
 
 <body>
 
-  <div id="start-screen">
-    <div class="heart-portal pulse"></div>
-    <button id="start-btn">Comenzar experiencia</button>
-  </div>
-
   <audio id="bg-music" loop playsinline>
     <source src="music/romantic.mp3" type="audio/mpeg">
   </audio>
 
-  <div id="intro" class="hidden">
-    <div class="scene" data-text="La historia...">
-      <img src="svg/history.svg" class="silhouette center">
-    </div>
-
-    <div class="scene active" data-text="Había una vez dos desconocidos,
-  viviendo sus propias historias,
-  sin imaginar que el destino
-  ya había decidido unirlos.">
-      <img src="svg/men walking.svg" class="silhouette left">
-      <img src="svg/woman walking.svg" class="silhouette right">
-    </div>
-
-    <div class="scene" data-text="Un día sus caminos se cruzaron,
-  y entre miradas tímidas y sonrisas sinceras,
-  algo comenzó a cambiar.">
-      <img src="svg/couple1.svg" class="silhouette center">
-    </div>
-
-    <div class="scene" data-text="Él la buscó con detalles, paciencia y cariño,
-  hasta que su presencia se volvió indispensable.">
-      <img src="svg/flowers.svg" class="silhouette center">
-    </div>
-
-    <div class="scene" data-text="Sin darse cuenta, el amor nació,
-  creciendo con cada palabra,
-  cada risa y cada instante compartido.">
-      <img src="svg/couple2.svg" class="silhouette center">
-    </div>
-
-    <div class="scene" data-text="No todo fue sencillo;
-  hubo dudas, peleas y momentos difíciles,
-  pero nunca dejaron de elegirse.">
-      <img src="svg/heart.svg" class="silhouette center">
-    </div>
-
-    <div class="scene" data-text="Decidieron compartir su vida,
-  construir un hogar
-  y aprender juntos el verdadero significado del amor.">
-      <img src="svg/couple.svg" class="silhouette center">
-    </div>
-
-    <div class="scene" data-text="De ese amor nació su mayor bendición,
-  un pequeño milagro
-  que llenó sus días de luz y esperanza.">
-      <img src="svg/baby.svg" class="silhouette center">
-    </div>
-
-    <div class="scene" data-text="Y hoy desean celebrar su historia,
-  cada triunfo y cada sueño cumplido,
-  contigo.">
-      <img src="svg/boda.svg" class="silhouette center">
-    </div>
-    <p id="story-text"></p>
-    <button id="skip">Saltar</button>
-
-  </div>
-
-  <!-- 🚪 PORTAL DE ENTRADA (EFECTO PUERTAS) -->
+  <!-- 🚪 PORTAL DE ENTRADA (TODO EN UNO) -->
   <div id="portal">
     <div class="door left-door"></div>
     <div class="door right-door"></div>
-    <div class="portal-content">
-      <div class="heart-portal"></div>
+
+    <!-- 1. Pantalla Inicial -->
+    <div id="portal-init" class="portal-content">
+      <div class="heart-portal pulse"></div>
       <button onclick="openInvitation()">Abrir invitación</button>
+    </div>
+
+    <!-- 2. Historia Intro (Visible tras pulsar Abrir) -->
+    <div id="intro" class="hidden">
+      <div class="scene" data-text="La historia...">
+        <img src="svg/history.svg" class="silhouette center">
+      </div>
+      <div class="scene"
+        data-text="Había una vez dos desconocidos, viviendo sus propias historias, sin imaginar que el destino ya había decidido unirlos.">
+        <img src="svg/men walking.svg" class="silhouette left">
+        <img src="svg/woman walking.svg" class="silhouette right">
+      </div>
+      <div class="scene"
+        data-text="Un día sus caminos se cruzaron, y entre miradas tímidas y sonrisas sinceras, algo comenzó a cambiar.">
+        <img src="svg/couple1.svg" class="silhouette center">
+      </div>
+      <div class="scene"
+        data-text="Él la buscó con detalles, paciencia y cariño, hasta que su presencia se volvió indispensable.">
+        <img src="svg/flowers.svg" class="silhouette center">
+      </div>
+      <div class="scene"
+        data-text="Sin darse cuenta, el amor nació, creciendo con cada palabra, cada risa y cada instante compartido.">
+        <img src="svg/couple2.svg" class="silhouette center">
+      </div>
+      <div class="scene"
+        data-text="No todo fue sencillo; hubo dudas, peleas y momentos difíciles, pero nunca dejaron de elegirse.">
+        <img src="svg/heart.svg" class="silhouette center">
+      </div>
+      <div class="scene"
+        data-text="Decidieron compartir su vida, construir un hogar y aprender juntos el verdadero significado del amor.">
+        <img src="svg/couple.svg" class="silhouette center">
+      </div>
+      <div class="scene"
+        data-text="De ese amor nació su mayor bendición, un pequeño milagro que llenó sus días de luz y esperanza.">
+        <img src="svg/baby.svg" class="silhouette center">
+      </div>
+      <div class="scene" data-text="Y hoy desean celebrar su historia, cada triunfo y cada sueño cumplido, contigo.">
+        <img src="svg/boda.svg" class="silhouette center">
+      </div>
+
+      <p id="story-text"></p>
+      <button id="skip">Saltar</button>
     </div>
   </div>
 

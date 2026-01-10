@@ -106,12 +106,34 @@ body {
 
 /* PORTAL - Rediseño de puertas románticas */
 #portal {
-  display: none;
+  display: flex;
   position: fixed;
   inset: 0;
   z-index: 9999;
-  /* Asegurar visibilidad total */
   overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+#portal-init {
+  z-index: 10;
+  transition: opacity 0.8s ease;
+}
+
+#intro {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  background: transparent;
+  transition: opacity 0.8s ease;
+}
+
+#intro.hidden {
+  display: none !important;
 }
 
 /* Las Puertas */
