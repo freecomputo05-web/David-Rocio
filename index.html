@@ -27,41 +27,109 @@
 
     <!-- 2. Historia Intro (Visible tras pulsar Abrir) -->
     <div id="intro" class="hidden">
-      <div class="scene" data-text="La historia...">
-        <img src="svg/history.svg" class="silhouette center">
-      </div>
-      <div class="scene"
-        data-text="Había una vez dos desconocidos, viviendo sus propias historias, sin imaginar que el destino ya había decidido unirlos.">
-        <img src="svg/men walking.svg" class="silhouette left">
-        <img src="svg/woman walking.svg" class="silhouette right">
-      </div>
-      <div class="scene"
-        data-text="Un día sus caminos se cruzaron, y entre miradas tímidas y sonrisas sinceras, algo comenzó a cambiar.">
-        <img src="svg/couple1.svg" class="silhouette center">
-      </div>
-      <div class="scene"
-        data-text="Él la buscó con detalles, paciencia y cariño, hasta que su presencia se volvió indispensable.">
-        <img src="svg/flowers.svg" class="silhouette center">
-      </div>
-      <div class="scene"
-        data-text="Sin darse cuenta, el amor nació, creciendo con cada palabra, cada risa y cada instante compartido.">
-        <img src="svg/couple2.svg" class="silhouette center">
-      </div>
-      <div class="scene"
-        data-text="No todo fue sencillo; hubo dudas, peleas y momentos difíciles, pero nunca dejaron de elegirse.">
-        <img src="svg/heart.svg" class="silhouette center">
-      </div>
-      <div class="scene"
-        data-text="Decidieron compartir su vida, construir un hogar y aprender juntos el verdadero significado del amor.">
-        <img src="svg/couple.svg" class="silhouette center">
-      </div>
-      <div class="scene"
-        data-text="De ese amor nació su mayor bendición, un pequeño milagro que llenó sus días de luz y esperanza.">
-        <img src="svg/baby.svg" class="silhouette center">
-      </div>
-      <div class="scene" data-text="Y hoy desean celebrar su historia, cada triunfo y cada sueño cumplido, contigo.">
-        <img src="svg/boda.svg" class="silhouette center">
-      </div>
+      <!-- 📖 El Libro Romántico -->
+      <div class="book">
+
+        <!-- Página 1: Introducción -->
+        <div class="page" id="page-0">
+          <div class="page-side front">
+            <div class="scene" data-text="La historia...">
+              <img src="svg/history.svg" class="silhouette center">
+            </div>
+          </div>
+          <div class="page-side back"></div>
+        </div>
+
+        <!-- Página 2: El Encuentro -->
+        <div class="page" id="page-1">
+          <div class="page-side front">
+            <div class="scene"
+              data-text="Había una vez dos desconocidos, viviendo sus propias historias, sin imaginar que el destino ya había decidido unirlos.">
+              <img src="svg/men walking.svg" class="silhouette left">
+              <img src="svg/woman walking.svg" class="silhouette right">
+            </div>
+          </div>
+          <div class="page-side back"></div>
+        </div>
+
+        <!-- Página 3: El Cambio -->
+        <div class="page" id="page-2">
+          <div class="page-side front">
+            <div class="scene"
+              data-text="Un día sus caminos se cruzaron, y entre miradas tímidas y sonrisas sinceras, algo comenzó a cambiar.">
+              <img src="svg/couple1.svg" class="silhouette center">
+            </div>
+          </div>
+          <div class="page-side back"></div>
+        </div>
+
+        <!-- Página 4: Los Detalles -->
+        <div class="page" id="page-3">
+          <div class="page-side front">
+            <div class="scene"
+              data-text="Él la buscó con detalles, paciencia y cariño, hasta que su presencia se volvió indispensable.">
+              <img src="svg/flowers.svg" class="silhouette center">
+            </div>
+          </div>
+          <div class="page-side back"></div>
+        </div>
+
+        <!-- Página 5: El Amor Nace -->
+        <div class="page" id="page-4">
+          <div class="page-side front">
+            <div class="scene"
+              data-text="Sin darse cuenta, el amor nació, creciendo con cada palabra, cada risa y cada instante compartido.">
+              <img src="svg/couple2.svg" class="silhouette center">
+            </div>
+          </div>
+          <div class="page-side back"></div>
+        </div>
+
+        <!-- Página 6: Las Pruebas -->
+        <div class="page" id="page-5">
+          <div class="page-side front">
+            <div class="scene"
+              data-text="No todo fue sencillo; hubo dudas, peleas y momentos difíciles, pero nunca dejaron de elegirse.">
+              <img src="svg/heart.svg" class="silhouette center">
+            </div>
+          </div>
+          <div class="page-side back"></div>
+        </div>
+
+        <!-- Página 7: La Decisión -->
+        <div class="page" id="page-6">
+          <div class="page-side front">
+            <div class="scene"
+              data-text="Decidieron compartir su vida, construir un hogar y aprender juntos el verdadero significado del amor.">
+              <img src="svg/couple.svg" class="silhouette center">
+            </div>
+          </div>
+          <div class="page-side back"></div>
+        </div>
+
+        <!-- Página 8: La Mayor Bendición -->
+        <div class="page" id="page-7">
+          <div class="page-side front">
+            <div class="scene"
+              data-text="De ese amor nació su mayor bendición, un pequeño milagro que llenó sus días de luz y esperanza.">
+              <img src="svg/baby.svg" class="silhouette center">
+            </div>
+          </div>
+          <div class="page-side back"></div>
+        </div>
+
+        <!-- Página 9: La Invitación -->
+        <div class="page" id="page-8">
+          <div class="page-side front">
+            <div class="scene"
+              data-text="Y hoy desean celebrar su historia, cada triunfo y cada sueño cumplido, contigo.">
+              <img src="svg/boda.svg" class="silhouette center">
+            </div>
+          </div>
+          <div class="page-side back"></div>
+        </div>
+
+      </div> <!-- /book -->
 
       <p id="story-text"></p>
       <button id="skip">Saltar</button>

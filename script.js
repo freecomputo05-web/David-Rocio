@@ -10,12 +10,28 @@ const skipBtn = document.getElementById("skip");
 const intro = document.getElementById("intro");
 const portal = document.getElementById("portal");
 
-let currentScene = 0;
+const pages = document.querySelectorAll(".page");
 
 function showScene(index) {
-  scenes.forEach(s => s.classList.remove("active"));
-  scenes[index].classList.add("active");
-  storyText.textContent = scenes[index].dataset.text;
+  // 1. Si no es la primera, flipeamos la anterior
+  if (index > 0) {
+    pages[index - 1].classList.add("flipped");
+  }
+
+  // 2. Actualizamos el texto
+  const currentSceneEl = pages[index].querySelector(".scene");
+  if (currentSceneEl) {
+    storyText.textContent = currentSceneEl.dataset.text;
+  }
+
+  // 3. Ajuste de Z-Index
+  pages.forEach((p, i) => {
+    if (i < index) {
+      p.style.zIndex = i;
+    } else {
+      p.style.zIndex = pages.length - i;
+    }
+  });
 }
 
 function openInvitation() {
@@ -40,19 +56,26 @@ function openInvitation() {
 
 function beginIntro() {
   currentScene = 0;
+
+  // Reset book states
+  pages.forEach((p, i) => {
+    p.classList.remove("flipped");
+    p.style.setProperty("--index", i);
+  });
+
   showScene(0);
 
   const introInterval = setInterval(() => {
     currentScene++;
-    if (currentScene < scenes.length) {
+    if (currentScene < pages.length) {
       showScene(currentScene);
     } else {
       clearInterval(introInterval);
-      endIntro();
+      setTimeout(endIntro, 1500);
     }
-  }, 4000);
+  }, 5000);
 
-  // Botón Saltar
+  // Skip logic
   skipBtn.onclick = () => {
     clearInterval(introInterval);
     endIntro();
