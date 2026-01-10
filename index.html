@@ -10,16 +10,17 @@
 
 <body>
 
-  <!-- 🎵 Música -->
-  <!-- 🎵 Música -->
+  <div id="start-screen">
+    <div class="heart-portal pulse"></div>
+    <button id="start-btn">Comenzar experiencia</button>
+  </div>
 
   <audio id="bg-music" loop playsinline>
     <source src="music/romantic.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- 🌙 INTRO HISTORIA -->
-  <div id="intro">
-    <div class="scene active" data-text="La historia...">
+  <div id="intro" class="hidden">
+    <div class="scene" data-text="La historia...">
       <img src="svg/history.svg" class="silhouette center">
     </div>
 

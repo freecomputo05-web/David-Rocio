@@ -8,51 +8,55 @@ const skipBtn = document.getElementById("skip");
 const intro = document.getElementById("intro");
 const portal = document.getElementById("portal");
 
-let currentScene = 0;
+// ==========================
+// MÚSICA Y CONTROL DE INICIO
+// ==========================
+
+const music = document.getElementById("bg-music");
+const startScreen = document.getElementById("start-screen");
+const startBtn = document.getElementById("start-btn");
+
+let introStarted = false;
+
+startBtn.addEventListener("click", () => {
+  // Play Music
+  music.currentTime = 0;
+  music.volume = 1.0;
+  music.play().catch(e => console.log("Error al reproducir música:", e));
+
+  // Hide Screen
+  startScreen.style.opacity = "0";
+  setTimeout(() => {
+    startScreen.style.display = "none";
+    intro.classList.remove("hidden");
+    beginIntro();
+  }, 1000);
+});
+
+function beginIntro() {
+  showScene(0);
+  const introInterval = setInterval(() => {
+    currentScene++;
+    if (currentScene < scenes.length) {
+      showScene(currentScene);
+    } else {
+      clearInterval(introInterval);
+      endIntro();
+    }
+  }, 4000);
+
+  // Global skip logic update
+  skipBtn.onclick = () => {
+    clearInterval(introInterval);
+    endIntro();
+  };
+}
 
 function showScene(index) {
   scenes.forEach(s => s.classList.remove("active"));
   scenes[index].classList.add("active");
   storyText.textContent = scenes[index].dataset.text;
 }
-
-showScene(0);
-
-const introInterval = setInterval(() => {
-  currentScene++;
-  if (currentScene < scenes.length) {
-    showScene(currentScene);
-  } else {
-    endIntro();
-  }
-}, 4000);
-
-function endIntro() {
-  clearInterval(introInterval);
-  intro.style.display = "none";
-  portal.style.display = "flex";
-}
-
-skipBtn.addEventListener("click", endIntro);
-
-// ==========================
-// MÚSICA Y PRIMERA INTERACCIÓN
-// ==========================
-
-const music = document.getElementById("bg-music");
-let musicStarted = false;
-
-function startMusic() {
-  if (musicStarted) return;
-  music.currentTime = 0;
-  music.volume = 1.0;
-  music.play().catch(e => console.log("Esperando interacción para música..."));
-  musicStarted = true;
-}
-
-// Escuchar primer clic en cualquier lugar para la música
-document.addEventListener("click", startMusic, { once: true });
-document.addEventListener("touchstart", startMusic, { once: true });
 
 // ==========================
 // ABRIR INVITACIÓN (A PRUEBA DE BALAS)

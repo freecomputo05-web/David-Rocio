@@ -8,6 +8,36 @@ body {
   text-align: center;
 }
 
+/* START SCREEN */
+#start-screen {
+  position: fixed;
+  inset: 0;
+  background: #0B0B0B;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  transition: opacity 1s ease;
+}
+
+#start-btn {
+  padding: 15px 35px;
+  font-family: "Cinzel", serif;
+  font-size: 1.1rem;
+  background: transparent;
+  color: #C9A24D;
+  border: 1px solid #C9A24D;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+#start-btn:hover {
+  background: rgba(201, 162, 77, 0.1);
+  transform: scale(1.05);
+}
+
 /* INTRO */
 #intro {
   position: fixed;
