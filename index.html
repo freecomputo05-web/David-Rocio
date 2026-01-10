@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rocío & David</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<img src="svg/colibri.svg" class="colibri" alt="Colibrí volando" aria-hidden="true" />
+
+<body>
+
+  <!-- 🎵 Música -->
+  <div id="start-overlay"></div>
+
+  <audio id="bg-music" loop playsinline>
+    <source src="music/romantic.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- 🌙 INTRO HISTORIA -->
+  <div id="intro">
+    <div class="scene active" data-text="La historia...">
+      <img src="svg/history.svg" class="silhouette center">
+    </div>
+
+    <div class="scene active" data-text="Había una vez dos desconocidos,
+  viviendo sus propias historias,
+  sin imaginar que el destino
+  ya había decidido unirlos.">
+      <img src="svg/men walking.svg" class="silhouette left">
+      <img src="svg/woman walking.svg" class="silhouette right">
+    </div>
+
+    <div class="scene" data-text="Un día sus caminos se cruzaron,
+  y entre miradas tímidas y sonrisas sinceras,
+  algo comenzó a cambiar.">
+      <img src="svg/couple1.svg" class="silhouette center">
+    </div>
+
+    <div class="scene" data-text="Él la buscó con detalles, paciencia y cariño,
+  hasta que su presencia se volvió indispensable.">
+      <img src="svg/flowers.svg" class="silhouette center">
+    </div>
+
+    <div class="scene" data-text="Sin darse cuenta, el amor nació,
+  creciendo con cada palabra,
+  cada risa y cada instante compartido.">
+      <img src="svg/couple2.svg" class="silhouette center">
+    </div>
+
+    <div class="scene" data-text="No todo fue sencillo;
+  hubo dudas, peleas y momentos difíciles,
+  pero nunca dejaron de elegirse.">
+      <img src="svg/heart.svg" class="silhouette center">
+    </div>
+
+    <div class="scene" data-text="Decidieron compartir su vida,
+  construir un hogar
+  y aprender juntos el verdadero significado del amor.">
+      <img src="svg/couple.svg" class="silhouette center">
+    </div>
+
+    <div class="scene" data-text="De ese amor nació su mayor bendición,
+  un pequeño milagro
+  que llenó sus días de luz y esperanza.">
+      <img src="svg/baby.svg" class="silhouette center">
+    </div>
+
+    <div class="scene" data-text="Y hoy desean celebrar su historia,
+  cada triunfo y cada sueño cumplido,
+  contigo.">
+      <img src="svg/boda.svg" class="silhouette center">
+    </div>
+    <p id="story-text"></p>
+    <button id="skip">Saltar</button>
+
+  </div>
+
+  <!-- ✨ PORTAL -->
+  <div id="portal">
+    <button onclick="openInvitation()">Abrir invitación</button>
+  </div>
+
+  <!-- 💍 CONTENIDO PRINCIPAL -->
+  <main id="content" class="hidden">
+    <section class="invitation letter">
+
+      <div class="letter-frame">
+
+        <p class="letter-opening">
+          Con profunda alegría y el corazón lleno de amor,
+        </p>
+
+        <h1 class="names">
+          David Mendoza <span class="amp">&</span> Rocío Flores
+        </h1>
+
+        <p class="letter-text">
+          después de recorrer juntos un camino lleno de momentos inolvidables,
+          aprendizajes, risas, desafíos superados y sueños compartidos,
+          hemos decidido dar uno de los pasos más importantes de nuestras vidas:
+          <strong>unirnos en matrimonio</strong>.
+        </p>
+
+        <p class="letter-text">
+          Nuestra historia no ha sido perfecta, pero sí verdadera.
+          Entre diferencias, abrazos, paciencia y amor,
+          entendimos que juntos somos más fuertes,
+          y que el amor, cuando es sincero, siempre encuentra la manera de triunfar.
+        </p>
+
+        <p class="letter-text">
+          Hoy, con la bendición de Dios y rodeados de quienes más queremos,
+          deseamos celebrar este nuevo comienzo.
+        </p>
+
+        <div class="family-section">
+          <p class="family-intro">Con la bendición de nuestros padres:</p>
+          <div class="parents-group">
+            <div class="parents-col">
+              <p class="names">Genaro Aurelio<br>Flores Silva</p>
+              <p class="names connector">&</p>
+              <p class="names">Petra<br>Silva Andrade</p>
+            </div>
+            <div class="parents-col">
+              <p class="names">Telesforo<br>Mendoza Andrade</p>
+              <p class="names connector">&</p>
+              <p class="names">Yolanda<br>Monterrosas Jimenez</p>
+            </div>
+          </div>
+
+          <p class="family-intro">Padrinos de Velación</p>
+          <div class="godparents-group">
+            <p class="names">Guadalupe Jimenez Deonate</p>
+            <p class="names connector">&</p>
+            <p class="names">Maritza Alonso Marcelino</p>
+          </div>
+
+          <p class="family-intro">Padrinos de Civil</p>
+          <div class="godparents-group">
+            <p class="names">Carlos Rodrigo Moreno Navarro</p>
+            <p class="names connector">&</p>
+            <p class="names">Karina Charely Monterrosas Mendoza</p>
+          </div>
+        </div>
+
+        <div class="ornament reveal">✦ ✦ ✦</div>
+
+        <!-- Parallax Hero Section (Novios 1) -->
+        <div class="parallax-section reveal" style="background-image: url('img/novios 1.jpg');">
+        </div>
+
+        <div class="ornament reveal">✦ ✦ ✦</div>
+
+        <!-- Decoration Inside Content (Scrolls with page) -->
+        <img src="svg/header.svg" class="decoration decoration-top" alt="Decoración Superior">
+        <img src="svg/header.svg" class="decoration decoration-bottom" alt="Decoración Inferior">
+
+        <!-- Ceremonia -->
+        <section class="event reveal">
+          <h2 class="event-title">Ceremonia Religiosa</h2>
+
+          <!-- Photo Insert (Novios 2) -->
+          <div class="photo-container">
+            <img src="img/novios 2.jpg" class="content-photo" alt="Nuestra Boda">
+          </div>
+
+          <p class="event-info">
+            Parroquia Jesús de las Maravillas<br>
+            Palmarito Tochapan, Puebla
+          </p>
+
+          <p class="event-info">
+            <strong>11 de abril de 2026</strong><br>
+            12:00 del día
+          </p>
+
+          <a href="https://www.google.com/maps/search/Parroquia+Jesus+de+las+Maravillas+Palmarito+Tochapan+Puebla"
+            target="_blank" class="map-link">
+            Ver ubicación
+          </a>
+        </section>
+
+        <div class="ornament reveal">✦ ✦ ✦</div>
+
+        <!-- Celebración -->
+        <section class="event reveal">
+          <h2 class="event-title">Celebración Social</h2>
+
+          <!-- Photo Insert (Novios 3) -->
+          <div class="photo-container">
+            <img src="img/novios 3.jpg" class="content-photo" alt="Celebración">
+          </div>
+
+          <p class="event-info">
+            Av. Guerrero 512<br>
+            Palmarito Tochapan, Puebla
+          </p>
+
+          <p class="event-info">
+            A partir de las <strong>4:00 p.m.</strong>
+          </p>
+
+          <a href="https://www.google.com/maps/search/Av.+Guerrero+512+Palmarito+Tochapan+Puebla" target="_blank"
+            class="map-link">
+            Ver ubicación
+          </a>
+        </section>
+
+        <div class="ornament reveal">✦ ✦ ✦</div>
+
+        <p class="letter-text emphasis reveal">
+          Tu presencia es muy importante para nosotros.
+          Nos haría inmensamente felices contar contigo en este día tan especial,
+          porque cada logro, cada paso y cada triunfo
+          cobra mayor sentido cuando se comparte con quienes forman parte de nuestra historia.
+        </p>
+
+        <p class="letter-closing">
+          Con cariño y gratitud,<br>
+          <span class="signature">David & Rocío</span>
+        </p>
+
+        <p class="quote">
+          “El amor no se mide por el tiempo,<br>
+          sino por los momentos que hacen eterno cada instante.”
+        </p>
+
+      </div>
+
+    </section>
+
+    <script src="script.js"></script>
+  </main>
+
+</body>
+
+</html>

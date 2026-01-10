@@ -1,0 +1,31 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100">
+  <!-- Center Feature -->
+  <circle cx="300" cy="30" r="6" fill="currentColor" />
+  <path d="M300,30 Q290,10 300,5 Q310,10 300,30" fill="currentColor" />
+  <path d="M300,30 Q290,50 300,55 Q310,50 300,30" fill="currentColor" />
+  <path d="M300,30 Q280,35 275,30 Q280,25 300,30" fill="currentColor" />
+  <path d="M300,30 Q320,35 325,30 Q320,25 300,30" fill="currentColor" />
+
+  <!-- Left Vine -->
+  <path d="M300,30 C250,30 200,60 150,50 C100,40 50,80 10,60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <!-- Leaves Left -->
+  <path d="M250,35 Q240,20 230,35" fill="currentColor" />
+  <path d="M200,50 Q190,70 180,55" fill="currentColor" />
+  <path d="M150,50 Q160,30 140,35" fill="currentColor" />
+  <path d="M100,50 Q90,70 80,55" fill="currentColor" />
+  <path d="M50,70 Q60,50 40,65" fill="currentColor" />
+
+  <!-- Right Vine (Mirror) -->
+  <path d="M300,30 C350,30 400,60 450,50 C500,40 550,80 590,60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <!-- Leaves Right -->
+  <path d="M350,35 Q360,20 370,35" fill="currentColor" />
+  <path d="M400,50 Q410,70 420,55" fill="currentColor" />
+  <path d="M450,50 Q440,30 460,35" fill="currentColor" />
+  <path d="M500,50 Q510,70 520,55" fill="currentColor" />
+  <path d="M550,70 Q540,50 560,65" fill="currentColor" />
+
+  <!-- Extra Flourishes -->
+  <path d="M270,40 Q250,50 240,40" fill="none" stroke="currentColor" stroke-width="1" />
+  <path d="M330,40 Q350,50 360,40" fill="none" stroke="currentColor" stroke-width="1" />
+
+</svg>

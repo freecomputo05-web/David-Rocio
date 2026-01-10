@@ -1,0 +1,37 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main Curve (Stem) -->
+  <path d="M10,200 Q10,10 200,10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+  
+  <!-- Leaves -->
+  <!-- Vertical part leaves -->
+  <path d="M10,150 Q-10,130 10,110 Q30,130 10,150" fill="currentColor" />
+  <path d="M10,100 Q30,80 10,60 Q-10,80 10,100" fill="currentColor" />
+  
+  <!-- Horizontal part leaves -->
+  <path d="M50,10 Q70,30 90,10 Q70,-10 50,10" fill="currentColor" />
+  <path d="M110,10 Q130,-10 150,10 Q130,30 110,10" fill="currentColor" />
+  
+  <!-- Corner Leaves -->
+  <path d="M20,40 Q5,45 10,20" fill="none" stroke="currentColor" stroke-width="3" />
+  <path d="M40,20 Q45,5 20,10" fill="none" stroke="currentColor" stroke-width="3" />
+
+  <!-- Flowers -->
+  <!-- Large Corner Flower -->
+  <g transform="translate(35, 35)">
+    <circle cx="0" cy="0" r="15" fill="currentColor" />
+    <circle cx="0" cy="0" r="10" fill="#0B0B0B" /> <!-- Cutout effect -->
+    <!-- Petals -->
+    <path d="M0,-25 Q5,-15 0,-15 Q-5,-15 0,-25" fill="currentColor" />
+    <path d="M0,25 Q-5,15 0,15 Q5,15 0,25" fill="currentColor" />
+    <path d="M25,0 Q15,5 15,0 Q15,-5 25,0" fill="currentColor" />
+    <path d="M-25,0 Q-15,-5 -15,0 Q-15,5 -25,0" fill="currentColor" />
+  </g>
+
+  <!-- Small End Flowers -->
+  <circle cx="190" cy="10" r="6" fill="currentColor" />
+  <circle cx="200" cy="20" r="4" fill="currentColor" />
+  
+  <circle cx="10" cy="190" r="6" fill="currentColor" />
+  <circle cx="20" cy="200" r="4" fill="currentColor" />
+
+</svg>
