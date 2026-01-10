@@ -382,14 +382,46 @@ iframe {
   ========================= */
 
 .names {
-  font-size: 2.6rem;
-  letter-spacing: 3px;
-  margin: 10px 0 35px;
+  font-size: 3.5rem;
+  /* El doble de grande */
+  letter-spacing: 4px;
+  margin: 15px 0 40px;
+  color: #C9A24D;
+  text-shadow: 0 0 10px rgba(201, 162, 77, 0.2);
+  transition: all 0.5s ease;
+  cursor: default;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.names:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 15px rgba(201, 162, 77, 0.4));
 }
 
 .names .amp {
-  color: #C9A24D;
+  color: #fff;
   font-weight: normal;
+  font-family: 'Pinyon Script', cursive;
+  font-size: 4.5rem;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+/* Shimmer animation for golden text */
+.names.active {
+  background: linear-gradient(90deg, #C9A24D 20%, #fff 50%, #C9A24D 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
 }
 
 /* =========================
@@ -397,10 +429,20 @@ iframe {
   ========================= */
 
 .letter-text {
-  font-size: 1.05rem;
-  line-height: 1.9;
-  margin-bottom: 22px;
+  font-size: 0.95rem;
+  /* Más pequeña y elegante */
+  line-height: 2;
+  margin-bottom: 25px;
   opacity: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+}
+
+.letter-text:hover {
+  color: #fff;
+  transform: translateX(8px);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .letter-text.emphasis {
