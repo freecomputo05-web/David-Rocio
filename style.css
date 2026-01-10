@@ -1092,7 +1092,7 @@ iframe {
 
 /* Text Shimmer Effect */
 .event-title,
-.names,
+h1.names,
 .parallax-content p {
   background: linear-gradient(to right, #ffd700 20%, #fff 50%, #ffd700 80%);
   background-size: 200% auto;
@@ -1102,7 +1102,25 @@ iframe {
   -webkit-text-fill-color: transparent;
   animation: shimmer 5s linear infinite;
   display: inline-block;
-  /* Required for transform/clip sometimes */
+}
+
+h1.names {
+  font-size: 5rem;
+  /* Mucho más grande */
+  margin: 20px 0;
+  letter-spacing: 2px;
+}
+
+.names {
+  font-family: "Cinzel", serif;
+  /* Aseguramos fuente elegante */
+}
+
+@media (max-width: 480px) {
+  h1.names {
+    font-size: 3rem;
+    /* Ajuste para móvil */
+  }
 }
 
 @keyframes shimmer {
