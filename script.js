@@ -71,7 +71,7 @@ function openInvitation() {
     revealedItems.forEach((item, index) => {
       setTimeout(() => {
         item.classList.add("active");
-      }, index * 200);
+      }, index * 150);
     });
   }, 600);
 
