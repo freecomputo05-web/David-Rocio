@@ -25,14 +25,14 @@ body {
 
 .book {
   position: relative;
-  width: 400px;
-  /* Más grande */
-  height: 580px;
-  /* Más alto */
+  width: 500px;
+  /* Masivo */
+  height: 720px;
+  /* Masivo */
   transform-style: preserve-3d;
   transition: transform 0.5s;
-  /* El lomo está a la izquierda, compensamos para centrar visualmente */
-  margin-left: 30px;
+  /* Compensamos lomo para centrado visual */
+  margin-left: 45px;
 }
 
 .page {
@@ -1136,18 +1136,23 @@ h1.names {
 /* Responsividad para móviles */
 @media (max-width: 480px) {
   .book {
-    width: 320px !important;
-    /* Más grande en móvil */
-    height: 460px !important;
-    margin-left: 20px !important;
+    width: 92vw !important;
+    /* Casi todo el ancho */
+    height: 75vh !important;
+    /* Casi todo el alto */
+    max-width: 400px !important;
+    max-height: 580px !important;
+    margin-left: 25px !important;
   }
 
   .page-text {
-    font-size: 0.85rem !important;
-    padding: 0 10px;
+    font-size: 1.1rem !important;
+    padding: 0 15px;
+    line-height: 1.3 !important;
   }
 
   .silhouette {
-    width: 80px !important;
+    width: 120px !important;
+    margin-bottom: 20px !important;
   }
 }
