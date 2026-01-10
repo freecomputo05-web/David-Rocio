@@ -25,10 +25,13 @@ body {
 
 .book {
   position: relative;
-  width: 320px;
-  height: 450px;
+  width: 350px;
+  /* Un poco más grande */
+  height: 500px;
   transform-style: preserve-3d;
   transition: transform 0.5s;
+  /* El lomo está a la izquierda, así que compensamos un poco para centrar visualmente el conjunto */
+  margin-left: 20px;
 }
 
 .page {
@@ -132,19 +135,24 @@ body {
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(201, 162, 77, 0.6);
+  border: 1px solid rgba(201, 162, 77, 0.5);
   color: #C9A24D;
-  padding: 6px 20px;
-  font-size: 0.85rem;
+  padding: 4px 12px;
+  /* Más pequeño */
+  font-size: 0.75rem;
+  /* Más pequeño */
   border-radius: 20px;
   backdrop-filter: blur(8px);
   cursor: pointer;
   z-index: 1000;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
 }
 
 #skip:hover {
+  opacity: 1;
   background: rgba(201, 162, 77, 0.1);
-  border-color: #C9A24D;
 }
 
 /* Responsividad */
