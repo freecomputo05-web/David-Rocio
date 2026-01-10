@@ -132,22 +132,23 @@ body {
 /* Skip button fix */
 #skip {
   position: absolute;
-  bottom: -60px;
+  bottom: -45px;
+  /* Un poco más arriba para compensar tamaño del libro */
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(201, 162, 77, 0.5);
+  border: 1px solid rgba(201, 162, 77, 0.4);
   color: #C9A24D;
-  padding: 4px 12px;
-  /* Más pequeño */
-  font-size: 0.75rem;
-  /* Más pequeño */
+  padding: 2px 8px;
+  /* Muy pequeño */
+  font-size: 0.65rem;
+  /* Muy pequeño */
   border-radius: 20px;
   backdrop-filter: blur(8px);
   cursor: pointer;
   z-index: 1000;
   letter-spacing: 0.5px;
-  opacity: 0.8;
+  opacity: 0.7;
   transition: all 0.3s ease;
 }
 
