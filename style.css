@@ -77,69 +77,109 @@ body {
   transition: opacity 0.5s ease;
 }
 
-/* PORTAL - Rediseño de lujo */
+/* PORTAL - Rediseño de puertas románticas */
 #portal {
   display: none;
   position: fixed;
   inset: 0;
+  z-index: 9999;
+  /* Asegurar visibilidad total */
+  overflow: hidden;
+}
+
+/* Las Puertas */
+.door {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50.5%;
+  /* Un poco más de 50% para que no se vea una línea en medio */
   background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
-  justify-content: center;
-  align-items: center;
-  z-index: 20;
-  flex-direction: column;
+  transition: transform 2.5s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 1;
+  border: 1px solid rgba(201, 162, 77, 0.1);
+}
+
+.left-door {
+  left: 0;
+  border-right: 1px solid rgba(201, 162, 77, 0.3);
+}
+
+.right-door {
+  right: 0;
+  border-left: 1px solid rgba(201, 162, 77, 0.3);
+}
+
+/* Efecto cuando se abre */
+#portal.opened .left-door {
+  transform: translateX(-100%);
+}
+
+#portal.opened .right-door {
+  transform: translateX(100%);
+}
+
+#portal.opened .portal-content {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.1);
+  pointer-events: none;
+}
+
+/* Contenido del Portal (Botón y Adorno) */
+.portal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  transition: all 1s ease;
 }
 
 .portal-decoration {
-  width: 250px;
-  margin-bottom: 2rem;
-  opacity: 0.8;
+  width: 280px;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 15px rgba(201, 162, 77, 0.3));
 }
 
 #portal button {
-  padding: 18px 45px;
+  padding: 22px 60px;
   font-family: "Pinyon Script", cursive;
-  font-size: 2.2rem;
-  background: transparent;
+  font-size: 2.6rem;
+  background: rgba(0, 0, 0, 0.6);
   color: #C9A24D;
-  border: 1px solid rgba(201, 162, 77, 0.5);
+  border: 1px solid rgba(201, 162, 77, 0.6);
   cursor: pointer;
   position: relative;
-  transition: all 0.5s ease;
-  letter-spacing: 1px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.6s ease;
+  letter-spacing: 2px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(201, 162, 77, 0.1);
 }
 
 #portal button:hover {
-  background: rgba(201, 162, 77, 0.1);
+  background: rgba(201, 162, 77, 0.15);
   border-color: #C9A24D;
   transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(201, 162, 77, 0.2);
-}
-
-/* Brillo pulsante detrás del botón */
-#portal button::after {
-  content: "";
-  position: absolute;
-  inset: -10px;
-  border: 1px solid rgba(201, 162, 77, 0.3);
-  animation: portalPulse 3s infinite;
-  pointer-events: none;
+  box-shadow: 0 0 40px rgba(201, 162, 77, 0.3);
 }
 
 @keyframes portalPulse {
   0% {
-    transform: scale(0.95);
-    opacity: 0.8;
+    transform: scale(0.98);
+    opacity: 0.7;
   }
 
   50% {
-    transform: scale(1.1);
-    opacity: 0.2;
+    transform: scale(1.05);
+    opacity: 0.3;
   }
 
   100% {
-    transform: scale(0.95);
-    opacity: 0.8;
+    transform: scale(0.98);
+    opacity: 0.7;
   }
 }
 

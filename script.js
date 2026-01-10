@@ -54,38 +54,38 @@ overlay.addEventListener("click", () => {
 // ABRIR INVITACIÓN (A PRUEBA DE BALAS)
 // ==========================
 function openInvitation() {
-  console.log("Abriendo invitación");
+  console.log("Abriendo invitación...");
 
-  // Ocultar portal
-  portal.style.display = "none";
-
-  // MOSTRAR CONTENIDO PRINCIPAL
+  const portal = document.getElementById("portal");
   const content = document.getElementById("content");
-  content.classList.remove("hidden");
 
-  // Iniciar colibrí viajero
+  // Agregar clase para animar apertura de puertas
+  portal.classList.add("opened");
+
+  // Pequeño delay antes de mostrar el fondo para que se vea el inicio de la apertura
+  setTimeout(() => {
+    content.classList.remove("hidden");
+
+    // Revelar elementos en cascada (para que aparezcan suavemente)
+    const revealedItems = document.querySelectorAll(".reveal");
+    revealedItems.forEach((item, index) => {
+      setTimeout(() => {
+        item.classList.add("active");
+      }, index * 200);
+    });
+  }, 600);
+
+  // Iniciar elementos románticos (Colibrí y Corazones)
   startColibri();
+  setInterval(createHeart, 500);
 
-  // Seleccionar invitación
-  const invitation = document.querySelector(".invitation");
+  // Eliminar el portal del DOM después de que termine la animación (2.5s)
+  setTimeout(() => {
+    portal.style.display = "none";
+    document.body.style.overflow = "auto";
+  }, 2500);
 
-  // Forzar render
-  invitation.offsetHeight;
-
-  // Activar animaciones
-  invitation.classList.add("animate");
-
-  // Animaciones en cascada
-  const items = invitation.querySelectorAll(
-    ".letter-opening, .letter-text, .event, .letter-closing, .quote"
-  );
-
-  items.forEach((el, i) => {
-    el.style.animationDelay = `${i * 0.25}s`;
-  });
-
-  // Habilitar scroll
-  document.body.style.overflow = "auto";
+  // Asegurar que estamos al principio de la página
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
@@ -110,8 +110,7 @@ function createHeart() {
   }, 8000);
 }
 
-// Crear corazones cada cierto tiempo
-setInterval(createHeart, 800);
+// Corazones se inician al abrir invitación
 
 const colibri = document.querySelector(".colibri");
 
