@@ -67,13 +67,10 @@ body {
 .colibri {
   position: fixed;
   width: 60px;
-  /* Tamaño ideal */
-  z-index: 100;
+  z-index: 9999;
   pointer-events: none;
   display: none;
-  /* Se activa por JS */
-  /* Golden metallic color + Glow */
-  filter: drop-shadow(0 0 8px rgba(201, 162, 77, 0.8)) sepia(1) saturate(5) hue-rotate(-10deg) brightness(1.2);
+  filter: drop-shadow(0 0 5px rgba(201, 162, 77, 0.5));
   transition: opacity 0.5s ease;
 }
 
