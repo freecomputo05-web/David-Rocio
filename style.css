@@ -8,51 +8,19 @@ body {
   text-align: center;
 }
 
-/* START SCREEN */
-#start-screen {
-  position: fixed;
-  inset: 0;
-  background: #0B0B0B;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-  transition: opacity 1s ease;
-}
-
-#start-btn {
-  padding: 15px 35px;
-  font-family: "Cinzel", serif;
-  font-size: 1.1rem;
-  background: transparent;
-  color: #C9A24D;
-  border: 1px solid #C9A24D;
-  cursor: pointer;
-  letter-spacing: 2px;
-  transition: all 0.3s ease;
-}
-
-#start-btn:hover {
-  background: rgba(201, 162, 77, 0.1);
-  transform: scale(1.05);
-}
-
-/* INTRO */
-#intro {
-  position: fixed;
-  inset: 0;
-  background: #0B0B0B;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-}
-
+/* INTRO (Dentro del Portal) */
 .scene {
   position: absolute;
   display: none;
+  width: 100%;
+  text-align: center;
+}
+
+.scene.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .scene.active {
@@ -62,8 +30,11 @@ body {
 .silhouette {
   width: 140px;
   opacity: 0;
-  animation: fadeInUp 2s forwards;
   filter: invert(72%) sepia(58%) saturate(420%) hue-rotate(6deg);
+}
+
+.scene.active .silhouette {
+  animation: fadeInUp 2s forwards;
 }
 
 .left {
@@ -85,12 +56,22 @@ body {
 }
 
 #skip {
-  margin-top: 20px;
+  margin-top: 30px;
   background: transparent;
-  border: 1px solid #C9A24D;
-  color: #C9A24D;
-  padding: 8px 20px;
+  border: 1px solid rgba(201, 162, 77, 0.4);
+  color: rgba(201, 162, 77, 0.7);
+  padding: 6px 15px;
+  font-size: 0.8rem;
   cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+#skip:hover {
+  color: #C9A24D;
+  border-color: #C9A24D;
+  background: rgba(201, 162, 77, 0.05);
 }
 
 /* COLIBRI */
@@ -113,6 +94,11 @@ body {
   overflow: hidden;
   justify-content: center;
   align-items: center;
+  transition: opacity 1s ease;
+}
+
+#portal.opened {
+  pointer-events: none;
 }
 
 #portal-init {
@@ -120,21 +106,11 @@ body {
   transition: opacity 0.8s ease;
 }
 
-#intro {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 5;
-  background: transparent;
-  transition: opacity 0.8s ease;
-}
-
 #intro.hidden {
   display: none !important;
 }
+
+/* Quitar definición duplicada de intro fixed */
 
 /* Las Puertas */
 .door {
@@ -431,14 +407,7 @@ iframe {
   margin: 0 10px;
 }
 
-/* Shimmer animation for golden text */
-.names.active {
-  background: linear-gradient(90deg, #C9A24D 20%, #fff 50%, #C9A24D 80%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 3s infinite linear;
-}
+
 
 @keyframes shimmer {
   to {
