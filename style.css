@@ -122,6 +122,18 @@ body {
   pointer-events: none;
 }
 
+/* Contenido del Portal (Botón y Corazón) */
+.portal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  transition: all 1s ease;
+}
+
 /* Corazón palpitante en el portal */
 .heart-portal {
   width: 80px;
