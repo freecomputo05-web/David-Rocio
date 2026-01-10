@@ -25,113 +25,111 @@
       <button onclick="openInvitation()">Abrir invitación</button>
     </div>
 
-    <!-- 2. Historia Intro (Visible tras pulsar Abrir) -->
+    <!-- 2. Historia Intro (Páginas de Libro 3D) -->
     <div id="intro" class="hidden">
-      <!-- 📖 El Libro Romántico -->
       <div class="book">
 
-        <!-- Página 1: Introducción -->
         <div class="page" id="page-0">
           <div class="page-side front">
-            <div class="scene" data-text="La historia...">
-              <img src="svg/history.svg" class="silhouette center">
+            <div class="scene">
+              <img src="svg/history.svg" class="silhouette">
+              <p class="page-text">La historia...</p>
             </div>
           </div>
           <div class="page-side back"></div>
         </div>
 
-        <!-- Página 2: El Encuentro -->
         <div class="page" id="page-1">
           <div class="page-side front">
-            <div class="scene"
-              data-text="Había una vez dos desconocidos, viviendo sus propias historias, sin imaginar que el destino ya había decidido unirlos.">
-              <img src="svg/men walking.svg" class="silhouette left">
-              <img src="svg/woman walking.svg" class="silhouette right">
+            <div class="scene">
+              <div class="silhouette-group">
+                <img src="svg/men walking.svg" class="silhouette">
+                <img src="svg/woman walking.svg" class="silhouette">
+              </div>
+              <p class="page-text">Había una vez dos desconocidos, viviendo sus propias historias, sin imaginar que el
+                destino ya había decidido unirlos.</p>
             </div>
           </div>
           <div class="page-side back"></div>
         </div>
 
-        <!-- Página 3: El Cambio -->
         <div class="page" id="page-2">
           <div class="page-side front">
-            <div class="scene"
-              data-text="Un día sus caminos se cruzaron, y entre miradas tímidas y sonrisas sinceras, algo comenzó a cambiar.">
-              <img src="svg/couple1.svg" class="silhouette center">
+            <div class="scene">
+              <img src="svg/couple1.svg" class="silhouette">
+              <p class="page-text">Un día sus caminos se cruzaron, y entre miradas tímidas y sonrisas sinceras, algo
+                comenzó a cambiar.</p>
             </div>
           </div>
           <div class="page-side back"></div>
         </div>
 
-        <!-- Página 4: Los Detalles -->
         <div class="page" id="page-3">
           <div class="page-side front">
-            <div class="scene"
-              data-text="Él la buscó con detalles, paciencia y cariño, hasta que su presencia se volvió indispensable.">
-              <img src="svg/flowers.svg" class="silhouette center">
+            <div class="scene">
+              <img src="svg/flowers.svg" class="silhouette">
+              <p class="page-text">Él la buscó con detalles, paciencia y cariño, hasta que su presencia se volvió
+                indispensable.</p>
             </div>
           </div>
           <div class="page-side back"></div>
         </div>
 
-        <!-- Página 5: El Amor Nace -->
         <div class="page" id="page-4">
           <div class="page-side front">
-            <div class="scene"
-              data-text="Sin darse cuenta, el amor nació, creciendo con cada palabra, cada risa y cada instante compartido.">
-              <img src="svg/couple2.svg" class="silhouette center">
+            <div class="scene">
+              <img src="svg/couple2.svg" class="silhouette">
+              <p class="page-text">Sin darse cuenta, el amor nació, creciendo con cada palabra, cada risa y cada
+                instante compartido.</p>
             </div>
           </div>
           <div class="page-side back"></div>
         </div>
 
-        <!-- Página 6: Las Pruebas -->
         <div class="page" id="page-5">
           <div class="page-side front">
-            <div class="scene"
-              data-text="No todo fue sencillo; hubo dudas, peleas y momentos difíciles, pero nunca dejaron de elegirse.">
-              <img src="svg/heart.svg" class="silhouette center">
+            <div class="scene">
+              <img src="svg/heart.svg" class="silhouette">
+              <p class="page-text">No todo fue sencillo; hubo dudas, peleas y momentos difíciles, pero nunca dejaron de
+                elegirse.</p>
             </div>
           </div>
           <div class="page-side back"></div>
         </div>
 
-        <!-- Página 7: La Decisión -->
         <div class="page" id="page-6">
           <div class="page-side front">
-            <div class="scene"
-              data-text="Decidieron compartir su vida, construir un hogar y aprender juntos el verdadero significado del amor.">
-              <img src="svg/couple.svg" class="silhouette center">
+            <div class="scene">
+              <img src="svg/couple.svg" class="silhouette">
+              <p class="page-text">Decidieron compartir su vida, construir un hogar y aprender juntos el verdadero
+                significado del amor.</p>
             </div>
           </div>
           <div class="page-side back"></div>
         </div>
 
-        <!-- Página 8: La Mayor Bendición -->
         <div class="page" id="page-7">
           <div class="page-side front">
-            <div class="scene"
-              data-text="De ese amor nació su mayor bendición, un pequeño milagro que llenó sus días de luz y esperanza.">
-              <img src="svg/baby.svg" class="silhouette center">
+            <div class="scene">
+              <img src="svg/baby.svg" class="silhouette">
+              <p class="page-text">De ese amor nació su mayor bendición, un pequeño milagro que llenó sus días de luz y
+                esperanza.</p>
             </div>
           </div>
           <div class="page-side back"></div>
         </div>
 
-        <!-- Página 9: La Invitación -->
         <div class="page" id="page-8">
           <div class="page-side front">
-            <div class="scene"
-              data-text="Y hoy desean celebrar su historia, cada triunfo y cada sueño cumplido, contigo.">
-              <img src="svg/boda.svg" class="silhouette center">
+            <div class="scene">
+              <img src="svg/boda.svg" class="silhouette">
+              <p class="page-text">Y hoy desean celebrar su historia, cada triunfo y cada sueño cumplido, contigo.</p>
             </div>
           </div>
           <div class="page-side back"></div>
         </div>
 
-      </div> <!-- /book -->
-
-      <p id="story-text"></p>
+      </div>
       <button id="skip">Saltar</button>
     </div>
   </div>
@@ -139,31 +137,21 @@
   <!-- 💍 CONTENIDO PRINCIPAL -->
   <main id="content" class="hidden">
     <section class="invitation letter">
-
       <div class="letter-frame">
-
-        <p class="letter-opening reveal">
-          Con profunda alegría y el corazón lleno de amor,
-        </p>
-
-        <h1 class="names reveal">
-          David Mendoza <span class="amp">&</span> Rocío Flores
-        </h1>
-
+        <p class="letter-opening reveal">Con profunda alegría y el corazón lleno de amor,</p>
+        <h1 class="names reveal">David Mendoza <span class="amp">&</span> Rocío Flores</h1>
         <p class="letter-text reveal">
           después de recorrer juntos un camino lleno de momentos inolvidables,
           aprendizajes, risas, desafíos superados y sueños compartidos,
           hemos decidido dar uno de los pasos más importantes de nuestras vidas:
           <strong>unirnos en matrimonio</strong>.
         </p>
-
         <p class="letter-text reveal">
           Nuestra historia no ha sido perfecta, pero sí verdadera.
           Entre diferencias, abrazos, paciencia y amor,
           entendimos que juntos somos más fuertes,
           y que el amor, cuando es sincero, siempre encuentra la manera de triunfar.
         </p>
-
         <p class="letter-text reveal">
           Hoy, con la bendición de Dios y rodeados de quienes más queremos,
           deseamos celebrar este nuevo comienzo.
@@ -183,14 +171,12 @@
               <p class="names">Yolanda<br>Monterrosas Jimenez</p>
             </div>
           </div>
-
           <p class="family-intro">Padrinos de Velación</p>
           <div class="godparents-group">
             <p class="names">Guadalupe Jimenez Deonate</p>
             <p class="names connector">&</p>
             <p class="names">Maritza Alonso Marcelino</p>
           </div>
-
           <p class="family-intro">Padrinos de Civil</p>
           <div class="godparents-group">
             <p class="names">Carlos Rodrigo Moreno Navarro</p>
@@ -200,94 +186,48 @@
         </div>
 
         <div class="ornament reveal">✦ ✦ ✦</div>
-
-        <!-- Parallax Hero Section (Novios 1) -->
-        <div class="parallax-section reveal" style="background-image: url('img/novios 1.jpg');">
-        </div>
-
+        <div class="parallax-section reveal" style="background-image: url('img/novios 1.jpg');"></div>
         <div class="ornament reveal">✦ ✦ ✦</div>
 
-        <!-- Decoration Inside Content (Scrolls with page) -->
         <img src="svg/header.svg" class="decoration decoration-top" alt="Decoración Superior">
         <img src="svg/header.svg" class="decoration decoration-bottom" alt="Decoración Inferior">
 
-        <!-- Ceremonia -->
         <section class="event reveal">
           <h2 class="event-title">Ceremonia Religiosa</h2>
-
-          <!-- Photo Insert (Novios 2) -->
           <div class="photo-container">
             <img src="img/novios 2.jpg" class="content-photo" alt="Nuestra Boda">
           </div>
-
-          <p class="event-info">
-            Parroquia Jesús de las Maravillas<br>
-            Palmarito Tochapan, Puebla
-          </p>
-
-          <p class="event-info">
-            <strong>11 de abril de 2026</strong><br>
-            12:00 del día
-          </p>
-
+          <p class="event-info">Parroquia Jesús de las Maravillas<br>Palmarito Tochapan, Puebla</p>
+          <p class="event-info"><strong>11 de abril de 2026</strong><br>12:00 del día</p>
           <a href="https://www.google.com/maps/search/Parroquia+Jesus+de+las+Maravillas+Palmarito+Tochapan+Puebla"
-            target="_blank" class="map-link">
-            Ver ubicación
-          </a>
+            target="_blank" class="map-link">Ver ubicación</a>
         </section>
 
         <div class="ornament reveal">✦ ✦ ✦</div>
 
-        <!-- Celebración -->
         <section class="event reveal">
           <h2 class="event-title">Celebración Social</h2>
-
-          <!-- Photo Insert (Novios 3) -->
           <div class="photo-container">
             <img src="img/novios 3.jpg" class="content-photo" alt="Celebración">
           </div>
-
-          <p class="event-info">
-            Av. Guerrero 512<br>
-            Palmarito Tochapan, Puebla
-          </p>
-
-          <p class="event-info">
-            A partir de las <strong>4:00 p.m.</strong>
-          </p>
-
+          <p class="event-info">Av. Guerrero 512<br>Palmarito Tochapan, Puebla</p>
+          <p class="event-info">A partir de las <strong>4:00 p.m.</strong></p>
           <a href="https://www.google.com/maps/search/Av.+Guerrero+512+Palmarito+Tochapan+Puebla" target="_blank"
-            class="map-link">
-            Ver ubicación
-          </a>
+            class="map-link">Ver ubicación</a>
         </section>
 
         <div class="ornament reveal">✦ ✦ ✦</div>
-
         <p class="letter-text emphasis reveal">
           Tu presencia es muy importante para nosotros.
-          Nos haría inmensamente felices contar contigo en este día tan especial,
-          porque cada logro, cada paso y cada triunfo
-          cobra mayor sentido cuando se comparte con quienes forman parte de nuestra historia.
+          Nos haría inmensamente felices contar contigo en este día tan especial...
         </p>
-
-        <p class="letter-closing reveal">
-          Con cariño y gratitud,<br>
-          <span class="signature">David & Rocío</span>
-        </p>
-
-        <p class="quote reveal">
-          “El amor no se mide por el tiempo,<br>
-          sino por los momentos que hacen eterno cada instante.”
-        </p>
-
+        <p class="letter-closing reveal">Con cariño y gratitud,<br><span class="signature">David & Rocío</span></p>
+        <p class="quote reveal">“El amor no se mide por el tiempo,<br>sino por los momentos que hacen eterno cada
+          instante.”</p>
       </div>
-
     </section>
-
     <script src="script.js"></script>
   </main>
-
 </body>
 
 </html>
