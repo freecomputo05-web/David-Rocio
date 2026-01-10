@@ -1107,3 +1107,21 @@ iframe {
     background-position: 200% center;
   }
 }
+
+/* Responsividad para móviles */
+@media (max-width: 480px) {
+  .book {
+    width: 300px !important;
+    height: 420px !important;
+    margin-left: 15px !important;
+    /* Compensa el lomo para centrar visualmente */
+  }
+
+  .page-text {
+    font-size: 0.85rem !important;
+  }
+
+  .silhouette {
+    width: 90px !important;
+  }
+}
