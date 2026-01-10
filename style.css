@@ -180,8 +180,8 @@ body {
   z-index: 9999;
   pointer-events: none;
   display: none;
-  /* Forzamos color dorado incluso si el SVG carga negro */
-  filter: invert(72%) sepia(21%) saturate(1178%) hue-rotate(1deg) brightness(95%) contrast(86%) drop-shadow(0 0 5px rgba(201, 162, 77, 0.5));
+  /* Brillo suave para el colibrí blanco */
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
   transition: opacity 0.5s ease;
 }
 
@@ -1109,8 +1109,8 @@ h1.names,
 }
 
 h1.names {
-  font-size: 5rem;
-  /* Mucho más grande */
+  font-size: 3.5rem;
+  /* Reducido para balance visual */
   margin: 20px 0;
   letter-spacing: 2px;
 }
@@ -1122,7 +1122,7 @@ h1.names {
 
 @media (max-width: 480px) {
   h1.names {
-    font-size: 3rem;
+    font-size: 2.2rem;
     /* Ajuste para móvil */
   }
 }
