@@ -106,16 +106,16 @@ body {
 }
 
 .page-text {
-  margin-top: 20px;
+  margin-top: 15px;
   color: #3d2f1a;
-  font-size: 1.4rem;
-  /* Texto mucho más grande */
+  font-size: 1.8rem;
+  /* Aún más grande para lectura fácil */
   font-family: 'Playfair Display', serif;
-  line-height: 1.4;
+  line-height: 1.3;
   text-align: center;
   font-style: italic;
-  font-weight: 600;
-  padding: 0 15px;
+  font-weight: 700;
+  padding: 0 20px;
 }
 
 .silhouette-group {
@@ -127,10 +127,10 @@ body {
 }
 
 .silhouette {
-  width: 140px;
-  /* Siluetas más grandes */
+  width: 120px;
+  /* Reducido un poco para dar más aire al texto grande */
   filter: sepia(1) brightness(0.4);
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 /* Skip button fix */
@@ -1146,13 +1146,15 @@ h1.names {
   }
 
   .page-text {
-    font-size: 1.1rem !important;
+    font-size: 1.3rem !important;
+    /* Más grande en móvil */
     padding: 0 15px;
-    line-height: 1.3 !important;
+    line-height: 1.2 !important;
   }
 
   .silhouette {
-    width: 120px !important;
-    margin-bottom: 20px !important;
+    width: 100px !important;
+    /* Ajuste para dar espacio al texto */
+    margin-bottom: 15px !important;
   }
 }
