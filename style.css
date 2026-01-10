@@ -180,8 +180,7 @@ body {
   z-index: 9999;
   pointer-events: none;
   display: none;
-  /* Forzamos que sea blanco puro independientemente del SVG original */
-  filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.4));
+  /* Eliminados filtros para usar el color nativo del SVG */
   transition: opacity 0.5s ease;
 }
 
