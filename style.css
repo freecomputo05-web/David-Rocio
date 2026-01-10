@@ -122,23 +122,53 @@ body {
   pointer-events: none;
 }
 
-/* Contenido del Portal (Botón y Adorno) */
-.portal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  text-align: center;
-  width: 100%;
-  transition: all 1s ease;
+/* Corazón palpitante en el portal */
+.heart-portal {
+  width: 80px;
+  height: 80px;
+  background: #C9A24D;
+  position: relative;
+  transform: rotate(-45deg);
+  margin: 0 auto 3rem;
+  animation: heartPulse 1.2s infinite;
+  box-shadow: 0 0 30px rgba(201, 162, 77, 0.4);
 }
 
-.portal-decoration {
-  width: 280px;
-  margin-bottom: 2.5rem;
-  opacity: 0.9;
-  filter: drop-shadow(0 0 15px rgba(201, 162, 77, 0.3));
+.heart-portal::before,
+.heart-portal::after {
+  content: "";
+  width: 80px;
+  height: 80px;
+  background: #C9A24D;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart-portal::before {
+  top: -40px;
+  left: 0;
+}
+
+.heart-portal::after {
+  top: 0;
+  left: 40px;
+}
+
+@keyframes heartPulse {
+  0% {
+    transform: rotate(-45deg) scale(1);
+    filter: brightness(1);
+  }
+
+  50% {
+    transform: rotate(-45deg) scale(1.2);
+    filter: brightness(1.3);
+  }
+
+  100% {
+    transform: rotate(-45deg) scale(1);
+    filter: brightness(1);
+  }
 }
 
 #portal button {
