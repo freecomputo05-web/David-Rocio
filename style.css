@@ -25,13 +25,14 @@ body {
 
 .book {
   position: relative;
-  width: 350px;
-  /* Un poco más grande */
-  height: 500px;
+  width: 400px;
+  /* Más grande */
+  height: 580px;
+  /* Más alto */
   transform-style: preserve-3d;
   transition: transform 0.5s;
-  /* El lomo está a la izquierda, así que compensamos un poco para centrar visualmente el conjunto */
-  margin-left: 20px;
+  /* El lomo está a la izquierda, compensamos para centrar visualmente */
+  margin-left: 30px;
 }
 
 .page {
@@ -174,7 +175,8 @@ body {
   z-index: 9999;
   pointer-events: none;
   display: none;
-  filter: drop-shadow(0 0 5px rgba(201, 162, 77, 0.5));
+  /* Forzamos color dorado incluso si el SVG carga negro */
+  filter: invert(72%) sepia(21%) saturate(1178%) hue-rotate(1deg) brightness(95%) contrast(86%) drop-shadow(0 0 5px rgba(201, 162, 77, 0.5));
   transition: opacity 0.5s ease;
 }
 
@@ -1111,17 +1113,18 @@ iframe {
 /* Responsividad para móviles */
 @media (max-width: 480px) {
   .book {
-    width: 300px !important;
-    height: 420px !important;
-    margin-left: 15px !important;
-    /* Compensa el lomo para centrar visualmente */
+    width: 320px !important;
+    /* Más grande en móvil */
+    height: 460px !important;
+    margin-left: 20px !important;
   }
 
   .page-text {
     font-size: 0.85rem !important;
+    padding: 0 10px;
   }
 
   .silhouette {
-    width: 90px !important;
+    width: 80px !important;
   }
 }
