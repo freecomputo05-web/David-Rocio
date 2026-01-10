@@ -36,19 +36,23 @@ function endIntro() {
 skipBtn.addEventListener("click", endIntro);
 
 // ==========================
-// MÚSICA
+// MÚSICA Y PRIMERA INTERACCIÓN
 // ==========================
 
-const overlay = document.getElementById("start-overlay");
 const music = document.getElementById("bg-music");
+let musicStarted = false;
 
-overlay.addEventListener("click", () => {
+function startMusic() {
+  if (musicStarted) return;
   music.currentTime = 0;
   music.volume = 1.0;
-  music.play().then(() => {
-    overlay.remove();
-  });
-}, { once: true });
+  music.play().catch(e => console.log("Esperando interacción para música..."));
+  musicStarted = true;
+}
+
+// Escuchar primer clic en cualquier lugar para la música
+document.addEventListener("click", startMusic, { once: true });
+document.addEventListener("touchstart", startMusic, { once: true });
 
 // ==========================
 // ABRIR INVITACIÓN (A PRUEBA DE BALAS)
