@@ -1109,9 +1109,9 @@ h1.names,
 }
 
 h1.names {
-  font-size: 3.5rem;
-  /* Reducido para balance visual */
-  margin: 20px 0;
+  font-size: 2.8rem;
+  /* Aún más pequeño para elegancia */
+  margin: 15px 0;
   letter-spacing: 2px;
 }
 
@@ -1122,7 +1122,7 @@ h1.names {
 
 @media (max-width: 480px) {
   h1.names {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     /* Ajuste para móvil */
   }
 }
