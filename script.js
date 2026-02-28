@@ -100,10 +100,10 @@ function endIntro() {
       }, index * 150);
     });
 
-    // Iniciar colibrí y corazones
+    // Iniciar colibrí y corazones (más frecuentes y rojos)
     startColibri();
     if (typeof startHearts === 'undefined') {
-      setInterval(createHeart, 500);
+      setInterval(() => createHeart(true), 300); // Casi el doble de corazones y rojos
     }
 
     // Limpieza portal
@@ -130,11 +130,15 @@ function endIntro() {
 // ==========================
 // CORAZONES FLOTANTES
 // ==========================
-function createHeart() {
+function createHeart(isRed = false) {
   const heart = document.createElement("div");
   heart.classList.add("heart");
+  if (isRed) {
+    heart.style.backgroundColor = "rgba(255, 40, 40, 0.8)"; // Rojo intenso
+    heart.style.boxShadow = "0 0 10px rgba(255, 0, 0, 0.5)";
+  }
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = Math.random() * 3 + 5 + "s";
+  heart.style.animationDuration = Math.random() * 3 + 4 + "s"; // Un poco más rápido
   document.body.appendChild(heart);
   setTimeout(() => heart.remove(), 8000);
 }

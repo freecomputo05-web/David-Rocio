@@ -1017,16 +1017,15 @@ iframe {
 }
 
 .content-photo {
-  max-width: 90%;
-  width: 500px;
+  max-width: 95%;
+  width: 800px;
+  /* Más anchas como se solicitó */
   height: auto;
   display: block;
-  filter: sepia(0.1) contrast(1.1);
-  /* Slight warmth */
-
+  filter: sepia(0.05) contrast(1.1);
   /* Soft Edge Fade Mask */
-  -webkit-mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
-  mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
 }
 
 @media (max-width: 768px) {
