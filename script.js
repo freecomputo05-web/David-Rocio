@@ -110,6 +110,16 @@ function endIntro() {
     setTimeout(() => {
       portal.style.display = "none";
       document.body.style.overflow = "auto";
+
+      // Auto-scroll suave para guiar al invitado
+      setTimeout(() => {
+        const topOfContent = content.offsetTop + 100;
+        window.scrollTo({
+          top: topOfContent,
+          behavior: "smooth"
+        });
+      }, 1000);
+
     }, 2500);
 
   }, 800);
