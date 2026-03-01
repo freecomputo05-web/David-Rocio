@@ -120,7 +120,6 @@ function endIntro() {
       heartInterval = setInterval(createHeart, 1500);
     }
 
-    startColibri();
 
     // Limpieza portal
     setTimeout(() => {
@@ -170,52 +169,5 @@ const observer = new IntersectionObserver((entries, obs) => {
   rootMargin: "0px 0px -50px 0px"
 });
 
-document.querySelectorAll(".reveal")
-  .forEach(el => observer.observe(el));
 
-
-// ==========================
-// COLIBRÍ OPTIMIZADO (GPU)
-// ==========================
-
-const colibri = document.querySelector(".colibri");
-
-function getRandomPosition() {
-
-  const padding = 60;
-
-  return {
-    x: Math.random() * (window.innerWidth - padding * 2) + padding,
-    y: Math.random() * (window.innerHeight - padding * 2) + padding
-  };
-}
-
-function fly() {
-
-  if (!colibri) return;
-
-  const { x, y } = getRandomPosition();
-
-  // GPU acceleration
-  colibri.style.willChange = "transform";
-
-  colibri.style.transform =
-    `translate(${x}px, ${y}px) scaleX(${Math.random() > 0.5 ? 1 : -1})`;
-
-  const duration = Math.random() * 3 + 4;
-
-  colibri.style.transition = `transform ${duration}s ease-in-out`;
-
-  setTimeout(fly, duration * 1000 + 1500);
-}
-
-function startColibri() {
-
-  if (!colibri) return;
-
-  colibri.style.display = "block";
-  colibri.style.transform = "translate(110vw, -10vh)";
-
-  setTimeout(fly, 1000);
-}
 

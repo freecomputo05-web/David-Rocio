@@ -272,6 +272,71 @@ body {
   display: block;
 }
 
+/* 3D GOLD TEXT SAMPLES */
+.font-test-section {
+  margin-top: 5rem;
+  padding: 4rem 1rem;
+  background: #fdfaf5;
+  border-top: 1px solid rgba(184, 134, 11, 0.1);
+}
+
+.gold-text-3d {
+  display: block;
+  margin: 2rem auto;
+  text-align: center;
+  /* Metallic Gradient */
+  background: linear-gradient(to bottom,
+      #cf9e3c 0%,
+      #f5e27d 25%,
+      #c8a248 50%,
+      #e4b041 75%,
+      #7f5c1a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #cbad6d;
+
+  /* 3D Extrusion using multiple shadows */
+  text-shadow:
+    0 1px 0 #9e7f33,
+    0 2px 0 #8c702d,
+    0 3px 0 #7a6227,
+    0 4px 0 #695421,
+    0 5px 0 #57461b,
+    0 6px 1px rgba(0, 0, 0, .1),
+    0 0 5px rgba(0, 0, 0, .1),
+    0 1px 3px rgba(0, 0, 0, .3),
+    0 3px 5px rgba(0, 0, 0, .2),
+    0 5px 10px rgba(0, 0, 0, .25),
+    0 10px 10px rgba(0, 0, 0, .2),
+    0 20px 20px rgba(0, 0, 0, .15);
+
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.5));
+}
+
+.variant-cursive {
+  font-family: "Pinyon Script", cursive;
+  font-size: 5.5rem;
+  font-weight: bold;
+}
+
+.variant-classic {
+  font-family: "Cinzel", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+@media (max-width: 768px) {
+  .variant-cursive {
+    font-size: 3.5rem;
+  }
+
+  .variant-classic {
+    font-size: 2rem;
+  }
+}
+
 #portal button {
   padding: 22px 60px;
   font-family: "Cinzel", serif;
@@ -506,16 +571,7 @@ h1.names {
   }
 }
 
-/* COLIBRI */
-.colibri {
-  display: none;
-  position: fixed;
-  width: 80px;
-  z-index: 99999;
-  filter: invert(18%) sepia(95%) saturate(7355%) hue-rotate(358deg) brightness(97%) contrast(116%);
-  /* RED */
-  transition: transform 3s ease-in-out, top 3s ease-in-out, left 3s ease-in-out;
-}
+
 
 /* REVEAL ON SCROLL */
 .reveal {
