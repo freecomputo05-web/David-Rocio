@@ -228,11 +228,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (toggleBtn && gallery) {
     toggleBtn.addEventListener("click", () => {
-      const isHidden = gallery.classList.contains("hidden-gallery");
+      const isHidden = gallery.style.display === "none";
 
       if (isHidden) {
-        gallery.classList.remove("hidden-gallery");
-        gallery.classList.add("visible-gallery");
+        gallery.style.display = "flex";
         toggleBtn.textContent = "Cerrar Memories";
 
         // Scroll suave a la galería
@@ -240,8 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
           gallery.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 100);
       } else {
-        gallery.classList.add("hidden-gallery");
-        gallery.classList.remove("visible-gallery");
+        gallery.style.display = "none";
         toggleBtn.textContent = "Memories";
       }
     });
