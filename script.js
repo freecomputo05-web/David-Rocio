@@ -44,6 +44,7 @@ function openInvitation() {
   setTimeout(() => {
     portalInit.style.display = "none";
     intro.classList.remove("hidden");
+    intro.classList.add("active");
     beginIntro();
   }, 800);
 }
