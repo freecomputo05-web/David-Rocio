@@ -4,9 +4,7 @@ body {
   margin: 0;
   font-family: 'Playfair Display', serif;
   background: #fffcf9;
-  /* Crema romántico */
   color: #4a0e0e;
-  /* Rojo pasión profundo */
   text-align: center;
   overflow-x: hidden;
 }
@@ -22,19 +20,15 @@ body {
   z-index: 5;
   background: transparent;
   perspective: 2000px;
-  /* Vital para el efecto 3D */
   transition: opacity 1s ease;
 }
 
 .book {
   position: relative;
   width: 500px;
-  /* Masivo */
   height: 720px;
-  /* Masivo */
   transform-style: preserve-3d;
   transition: transform 0.5s;
-  /* Compensamos lomo para centrado visual */
   margin-left: 45px;
 }
 
@@ -72,12 +66,10 @@ body {
   background: linear-gradient(to right, #e8e0d1 0%, #f5efde 100%);
   border: 1px solid #d4cbb3;
   border-left: 5px solid #8b7344;
-  /* Lomo del libro */
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.05), 5px 5px 20px rgba(0, 0, 0, 0.2);
   z-index: 2;
 }
 
-/* Borde dorado delicado */
 .front::after {
   content: "";
   position: absolute;
@@ -92,7 +84,6 @@ body {
   z-index: 1;
 }
 
-/* Escenas dentro de las páginas */
 .scene {
   width: 100%;
   height: 100%;
@@ -101,18 +92,12 @@ body {
   justify-content: center;
   align-items: center;
   opacity: 1 !important;
-  /* Siempre visibles dentro de la página */
-}
-
-#story-text {
-  display: none;
 }
 
 .page-text {
   margin-top: 10px;
   color: #3d2f1a;
   font-size: 2.5rem;
-  /* Tamaño ultra-grande */
   font-family: 'Playfair Display', serif;
   line-height: 1.1;
   text-align: center;
@@ -131,25 +116,20 @@ body {
 
 .silhouette {
   width: 80px;
-  /* Reducido drásticamente para dejar espacio al texto gigante */
   filter: sepia(1) brightness(0.4);
   margin-bottom: 15px;
 }
 
-/* Skip button fix */
 #skip {
   position: absolute;
   bottom: -45px;
-  /* Un poco más arriba para compensar tamaño del libro */
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(201, 162, 77, 0.4);
-  color: #C9A24D;
+  border: 1px solid rgba(179, 27, 27, 0.4);
+  color: #B8860B;
   padding: 2px 8px;
-  /* Muy pequeño */
   font-size: 0.65rem;
-  /* Muy pequeño */
   border-radius: 20px;
   backdrop-filter: blur(8px);
   cursor: pointer;
@@ -161,33 +141,10 @@ body {
 
 #skip:hover {
   opacity: 1;
-  background: rgba(201, 162, 77, 0.1);
+  background: rgba(179, 27, 27, 0.1);
 }
 
-/* Responsividad */
-@media (max-width: 480px) {
-  .book {
-    width: 280px;
-    height: 380px;
-  }
-
-  .page-text {
-    font-size: 0.85rem;
-  }
-}
-
-/* COLIBRI */
-.colibri {
-  position: fixed;
-  width: 60px;
-  z-index: 9999;
-  pointer-events: none;
-  display: none;
-  /* Eliminados filtros para usar el color nativo del SVG */
-  transition: opacity 0.5s ease;
-}
-
-/* PORTAL - Rediseño de puertas románticas */
+/* PORTAL */
 #portal {
   display: flex;
   position: fixed;
@@ -199,28 +156,11 @@ body {
   transition: opacity 1s ease;
 }
 
-#portal.opened {
-  pointer-events: none;
-}
-
-#portal-init {
-  z-index: 10;
-  transition: opacity 0.8s ease;
-}
-
-#intro.hidden {
-  display: none !important;
-}
-
-/* Quitar definición duplicada de intro fixed */
-
-/* Las Puertas */
 .door {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 50.5%;
-  /* Un poco más de 50% para que no se vea una línea en medio */
   background: radial-gradient(circle at center, #ffffff 0%, #fdf5e6 100%);
   transition: transform 2.5s cubic-bezier(0.77, 0, 0.175, 1);
   z-index: 1;
@@ -237,7 +177,6 @@ body {
   border-left: 2px solid rgba(179, 27, 27, 0.3);
 }
 
-/* Efecto cuando se abre */
 #portal.opened .left-door {
   transform: translateX(-100%);
 }
@@ -246,13 +185,6 @@ body {
   transform: translateX(100%);
 }
 
-#portal.opened .portal-content {
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(1.1);
-  pointer-events: none;
-}
-
-/* Contenido del Portal (Botón y Corazón) */
 .portal-content {
   position: absolute;
   top: 50%;
@@ -264,12 +196,10 @@ body {
   transition: all 1s ease;
 }
 
-/* Corazón palpitante en el portal */
 .heart-portal {
   width: 80px;
   height: 80px;
   background: #b31b1b;
-  /* Rojo Pasión */
   position: relative;
   transform: rotate(-45deg);
   margin: 0 auto 3rem;
@@ -298,7 +228,9 @@ body {
 }
 
 @keyframes heartPulse {
-  0% {
+
+  0%,
+  100% {
     transform: rotate(-45deg) scale(1);
     filter: brightness(1);
   }
@@ -306,11 +238,6 @@ body {
   50% {
     transform: rotate(-45deg) scale(1.2);
     filter: brightness(1.3);
-  }
-
-  100% {
-    transform: rotate(-45deg) scale(1);
-    filter: brightness(1);
   }
 }
 
@@ -323,131 +250,21 @@ body {
   color: #b31b1b;
   border: 2px solid rgba(179, 27, 27, 0.6);
   cursor: pointer;
-  position: relative;
-  transition: all 0.6s ease;
   letter-spacing: 2px;
   backdrop-filter: blur(5px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(201, 162, 77, 0.1);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.6s ease;
 }
 
 #portal button:hover {
-  background: rgba(201, 162, 77, 0.15);
-  border-color: #C9A24D;
+  background: rgba(179, 27, 27, 0.1);
   transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(201, 162, 77, 0.3);
 }
 
-@keyframes portalPulse {
-  0% {
-    transform: scale(0.98);
-    opacity: 0.7;
-  }
-
-  50% {
-    transform: scale(1.05);
-    opacity: 0.3;
-  }
-
-  100% {
-    transform: scale(0.98);
-    opacity: 0.7;
-  }
-}
-
-/* CONTENIDO */
+/* INVITACIÓN */
 .hidden {
   display: none;
 }
-
-iframe {
-  width: 80%;
-  height: 250px;
-  border: none;
-  margin-bottom: 30px;
-}
-
-/* ANIMACIONES */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.ring-anim {
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.1);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes enterLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-80px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes enterRight {
-  from {
-    opacity: 0;
-    transform: translateX(80px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.left {
-  position: absolute;
-  left: 12%;
-  bottom: 15%;
-  animation: enterLeft 2.2s ease-out forwards;
-}
-
-.right {
-  position: absolute;
-  right: 12%;
-  bottom: 15%;
-  animation: enterRight 2.2s ease-out forwards;
-}
-
-@media (max-width: 768px) {
-  .left {
-    left: 5%;
-    bottom: 12%;
-  }
-
-  .right {
-    right: 5%;
-    bottom: 12%;
-  }
-}
-
-/* INVITACIÓN - ESTILO CARTA */
 
 .invitation {
   min-height: 100vh;
@@ -455,7 +272,6 @@ iframe {
   display: flex;
   justify-content: center;
   background: #fffcf9;
-  /* Fondo crema */
   overflow: hidden;
 }
 
@@ -464,86 +280,40 @@ iframe {
   width: 100%;
   padding: 70px 55px;
   background: #fffefb;
-  /* Blanco suave */
   border: 1px solid rgba(179, 27, 27, 0.2);
-  /* Borde rojo suave */
   box-shadow: 0 0 50px rgba(179, 27, 27, 0.05);
   animation: letterReveal 1.6s ease forwards;
 }
 
-/* =========================
-     APERTURA
-  ========================= */
-
 .letter-opening {
   font-style: italic;
   color: #B8860B;
-  /* Darker more readable gold */
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   margin-bottom: 25px;
   opacity: 0;
 }
 
-/* =========================
-     NOMBRES
-  ========================= */
-
-.names {
+h1.names {
+  font-family: "Cinzel", serif;
   font-size: 3.5rem;
-  /* El doble de grande */
   letter-spacing: 4px;
   margin: 15px 0 40px;
   color: #b31b1b;
   text-shadow: 0 0 10px rgba(179, 27, 27, 0.2);
-  transition: all 0.5s ease;
-  cursor: default;
-  position: relative;
-  display: inline-block;
-  width: 100%;
-}
-
-.names:hover {
-  transform: scale(1.03);
-  filter: drop-shadow(0 0 15px rgba(179, 27, 27, 0.4));
 }
 
 .names .amp {
   color: #fff;
-  font-weight: normal;
   font-family: 'Pinyon Script', cursive;
   font-size: 4.5rem;
-  vertical-align: middle;
   margin: 0 10px;
 }
 
-
-
-@keyframes shimmer {
-  to {
-    background-position: 200% center;
-  }
-}
-
-/* =========================
-     TEXTO CARTA
-  ========================= */
-
 .letter-text {
   font-size: 0.95rem;
-  /* Más pequeña y elegante */
   line-height: 2;
   margin-bottom: 25px;
-  opacity: 0;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   color: #4a0e0e;
-  /* Dark red for readability */
-  cursor: pointer;
-}
-
-.letter-text:hover {
-  color: #b31b1b;
-  transform: translateX(8px);
-  text-shadow: 0 0 10px rgba(179, 27, 27, 0.1);
 }
 
 .letter-text.emphasis {
@@ -551,10 +321,6 @@ iframe {
   color: #b31b1b;
   font-weight: bold;
 }
-
-/* =========================
-     SEPARADORES
-  ========================= */
 
 .ornament {
   margin: 40px 0;
@@ -564,38 +330,21 @@ iframe {
   opacity: 0.9;
 }
 
-/* =========================
-     EVENTOS
-  ========================= */
-
-.event {
-  margin: 35px 0;
-  opacity: 0;
-}
-
 .event-title {
   font-size: 1.4rem;
   margin-bottom: 10px;
   color: #b31b1b;
 }
 
-.event-info {
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-/* =========================
-     BOTÓN MAPA
-  ========================= */
-
 .map-link {
   display: inline-block;
   margin-top: 14px;
+  padding: 8px 20px;
   color: #b31b1b;
   border: 1px solid #b31b1b;
   text-decoration: none;
-  letter-spacing: 1px;
   transition: all 0.4s ease;
+  animation: pulseButton 2s infinite;
 }
 
 .map-link:hover {
@@ -603,147 +352,48 @@ iframe {
   color: #fff;
 }
 
-/* =========================
-     CIERRE
-  ========================= */
-
-.letter-closing {
-  margin-top: 50px;
-  font-size: 1.1rem;
-  opacity: 0;
-}
-
 .signature {
+  font-family: "Pinyon Script", cursive;
+  font-size: 5rem;
   color: #b31b1b;
-  font-size: 1.2rem;
 }
 
-.quote {
-  margin-top: 45px;
-  font-style: italic;
-  font-size: 0.95rem;
-  opacity: 0;
+/* PARALLAX & DECORATION */
+.parallax-section {
+  width: 100%;
+  height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem 0;
+  box-shadow: inset 0 0 30px rgba(179, 27, 27, 0.15);
 }
 
-/* =========================
-     ACTIVAR ANIMACIONES
-  ========================= */
-
-.invitation.animate .letter-opening,
-.invitation.animate .letter-text,
-.invitation.animate .event,
-.invitation.animate .letter-closing,
-.invitation.animate .quote {
-  animation: fadeUp 1.2s ease forwards;
-}
-
-/* =========================
-     ANIMACIONES
-  ========================= */
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes letterReveal {
-  from {
-    opacity: 0;
-    transform: translateY(60px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =========================
-     RESPONSIVE
-  ========================= */
-
-@media (max-width: 768px) {
-  .letter-frame {
-    padding: 45px 28px;
-  }
-
-  .names {
-    font-size: 2rem;
-  }
-
-  .letter-text {
-    font-size: 0.95rem;
-  }
-}
-
-.invitation.animate .letter-opening,
-.invitation.animate .letter-text,
-.invitation.animate .event,
-.invitation.animate .letter-closing,
-.invitation.animate .quote {
-  animation-name: fadeUp;
-  animation-duration: 1.2s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-}
-
-.invitation {
-  display: flex !important;
-}
-
-.hidden {
-  display: none;
-}
-
-.colibri {
-  position: fixed;
-  width: 80px;
-  pointer-events: none;
-  z-index: 99999;
-  filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
-  opacity: 0.9;
-  display: none;
-  /* Controlled by JS */
-
-  /* Smooth movement */
-  transition: transform 3s ease-in-out, top 3s ease-in-out, left 3s ease-in-out;
-}
-
-/* =========================
-     DECORACIÓN SUPERIOR / INFERIOR (SCROLL)
-  ========================= */
-#invitation {
-  position: relative;
-  /* Anchor for absolute decorations */
-  /* Ensure padding so decorations don't overlap text */
-  padding-top: 100px;
-  padding-bottom: 100px;
-  overflow: hidden;
-  /* Prevent horizontal scroll if decoration is wide */
+.parallax-content {
+  background: rgba(255, 252, 249, 0.95);
+  padding: 25px 60px;
+  border-radius: 15px;
+  border: 2px solid rgba(179, 27, 27, 0.4);
+  color: #b31b1b;
+  font-family: "Pinyon Script", cursive;
+  font-size: 4.5rem;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .decoration {
   position: absolute;
-  /* Scrolls with content */
   z-index: 0;
-  /* Behind text if overlaps */
   pointer-events: none;
-  opacity: 0.9;
   width: 100%;
   max-width: 600px;
-  height: auto;
   left: 50%;
   transform: translateX(-50%);
-
-  /* Golden Filter */
-  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(35deg) drop-shadow(0 0 5px rgba(255, 215, 0, 0.3));
+  filter: invert(18%) sepia(95%) saturate(7355%) hue-rotate(358deg) brightness(97%) contrast(116%) drop-shadow(0 0 5px rgba(179, 27, 27, 0.3));
 }
 
 .decoration-top {
@@ -753,321 +403,92 @@ iframe {
 .decoration-bottom {
   bottom: 0;
   transform: translateX(-50%) scaleY(-1);
-  /* Mirror vertically */
 }
 
-/* =========================
-     FAMILY NAMES SECTION
-  ========================= */
-.family-section {
-  margin: 3rem auto;
-  font-family: "Cinzel", serif;
-  color: #B8860B;
-  font-weight: 700;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 0.8rem;
-  margin-top: 2.5rem;
-  /* Space before new section */
-  opacity: 1;
-  position: relative;
-  display: inline-block;
-}
-
-/* Little lines beside titles */
-.family-intro::before,
-.family-intro::after {
-  content: "";
-  display: inline-block;
-  width: 20px;
-  height: 1px;
-  background-color: #B8860B;
-  vertical-align: middle;
-  margin: 0 10px;
-  opacity: 0.7;
-}
-
-.parents-group {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-/* Each parent block */
-.parents-col {
-  flex: 1;
-  min-width: 280px;
-}
-
-.names {
-  font-size: 1.3rem;
-  line-height: 1.3;
-  margin: 0.5rem 0;
-  font-weight: 400;
-  /* Lighter weight for elegance */
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  color: #4a0e0e;
-}
-
-.names.connector {
-  font-size: 0.8rem;
-  font-style: italic;
-  opacity: 0.6;
-  margin: 0.2rem 0;
-}
-
-.godparents-group {
-  margin-bottom: 2rem;
-}
-
-/* Special emphasis for names */
-.names strong {
-  font-weight: 700;
-}
-
-@media (max-width: 768px) {
-  .decoration {
-    width: 100%;
-    opacity: 0.7;
-  }
-
-  .parents-group {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .names {
-    font-size: 1.2rem;
-  }
-
-  #invitation {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-}
-
-/* =========================
-     RESPONSIVE DESIGN (MOBILE)
-  ========================= */
-
-@media (max-width: 768px) {
-
-  /* Ajuste de Intro */
-  .silhouette {
-    width: 100px;
-    /* Más pequeño para que quepa */
-  }
-
-  #story-text {
-    margin-top: 180px;
-    font-size: 1.1rem;
-    padding: 0 20px;
-  }
-
-  /* Ajuste de Invitación */
-  .invitation {
-    padding: 60px 15px;
-  }
-
-  .letter-frame {
-    padding: 30px 20px;
-  }
-
-  .names {
-    font-size: 1.8rem;
-    margin: 10px 0 25px;
-  }
-
-  .letter-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  .event-title {
-    font-size: 1.25rem;
-  }
-
-  /* Ajuste de Enredaderas para no tapar texto */
-  .vine {
-    opacity: 0.6;
-    /* Menos intrusivo en móvil */
-    width: 120px;
-  }
-
-  .vine-bl,
-  .vine-br {
-    width: 140px;
-  }
-
-  /* Colibrí más pequeño */
-  .colibri {
-    width: 50px;
-  }
-}
-
-@media (max-width: 480px) {
-  .names {
-    font-size: 1.6rem;
-  }
-
-  .letter-opening {
-    font-size: 0.9rem;
-  }
-
-  .vine {
-    width: 100px;
-  }
-}
-
-/* Floating Hearts */
-.heart {
-  position: fixed;
-  bottom: -50px;
-  background-color: rgba(179, 27, 27, 0.6);
-  /* Rojo Pasión */
-  width: 20px;
-  height: 20px;
-  transform: rotate(45deg);
-  pointer-events: none;
-  z-index: 1;
-  /* Behind content mostly */
-  animation: floatUp 8s linear forwards;
-}
-
-.heart::before,
-.heart::after {
-  content: "";
-  width: 20px;
-  height: 20px;
-  background-color: inherit;
-  border-radius: 50%;
+/* FOTOMATION */
+.fotomation-bg {
   position: absolute;
-}
-
-.heart::before {
-  top: -10px;
-  left: 0;
-}
-
-.heart::after {
   top: 0;
-  left: -10px;
+  width: 140px;
+  height: 200%;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.15;
+  pointer-events: none;
 }
 
-@keyframes floatUp {
-  0% {
-    transform: translateY(0) rotate(45deg) scale(1);
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 0.8;
-  }
-
-  100% {
-    transform: translateY(-120vh) rotate(45deg) scale(0.5);
-    opacity: 0;
-  }
+.left-strip {
+  left: 20px;
 }
 
-/* =========================
-   PHOTOS & INTERACTIVITY
-========================= */
+.right-strip {
+  right: 20px;
+}
 
-/* Parallax Section */
-.parallax-section {
+.fotomation-track {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   width: 100%;
-  height: 300px;
-  /* Adjust based on preference */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 3rem 0;
-  box-shadow: inset 0 0 30px rgba(179, 27, 27, 0.15);
-  /* Reddish soft inner shadow */
 }
 
-.parallax-content {
-  background: rgba(255, 252, 249, 0.85);
-  /* Light cream/white */
-  padding: 15px 40px;
-  border-radius: 8px;
-  border: 1px solid rgba(179, 27, 27, 0.2);
-  color: #b31b1b;
-  font-family: "Pinyon Script", cursive;
-  font-size: 3.5rem;
-  letter-spacing: 1px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+.photo-strip {
+  width: 140px;
+  height: 200px;
+  border-radius: 4px;
+  border: 3px solid #fff;
+  overflow: hidden;
 }
 
-/* Photo Updates (Dreamy Fade) */
-.photo-container {
-  margin: 4rem auto;
-  padding: 0;
-  background: transparent;
-  box-shadow: none;
-  display: flex;
-  justify-content: center;
-  transform: none;
-  /* No rotation */
-  transition: transform 0.8s ease;
-  max-width: 100%;
+.photo-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.photo-container:hover {
-  transform: scale(1.05);
-  /* Gentle zoom */
+.up {
+  animation: scrollUp 40s linear infinite;
 }
 
-.content-photo {
-  max-width: 95%;
-  width: 800px;
-  /* Más anchas como se solicitó */
-  height: auto;
-  display: block;
-  filter: sepia(0.05) contrast(1.1);
-  /* Soft Edge Fade Mask */
-  -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
-  mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+.down {
+  animation: scrollDown 40s linear infinite;
 }
 
-@media (max-width: 768px) {
-  .parallax-section {
-    background-attachment: scroll;
-    height: 250px;
+@keyframes scrollUp {
+  from {
+    transform: translateY(0);
   }
 
-  .content-photo {
-    -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
-    mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+  to {
+    transform: translateY(-50%);
   }
 }
 
-/* Typography Upgrade */
-.letter-closing .signature {
-  display: block;
-  font-family: "Pinyon Script", cursive;
-  font-size: 5rem;
-  /* Large and elegant */
-  color: #b31b1b;
-  margin-top: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  line-height: 1.2;
+@keyframes scrollDown {
+  from {
+    transform: translateY(-50%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
 }
 
-/* Scroll Animations */
+/* COLIBRI */
+.colibri {
+  position: fixed;
+  width: 80px;
+  z-index: 99999;
+  filter: invert(18%) sepia(95%) saturate(7355%) hue-rotate(358deg) brightness(97%) contrast(116%);
+  /* RED */
+  transition: transform 3s ease-in-out, top 3s ease-in-out, left 3s ease-in-out;
+}
+
+/* REVEAL ON SCROLL */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 2s ease-out;
-  /* Slower and smoother */
+  transition: all 1.5s ease-out;
 }
 
 .reveal.active {
@@ -1075,134 +496,22 @@ iframe {
   transform: translateY(0);
 }
 
-/* =========================
-   NEW ANIMATIONS
-========================= */
-
-/* Pulsing Map Button */
-.map-link {
-  display: inline-block;
-  animation: pulseButton 2s infinite;
-  box-shadow: 0 0 0 rgba(197, 160, 89, 0.7);
-}
-
-@keyframes pulseButton {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.7);
-  }
-
-  70% {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px 10px rgba(197, 160, 89, 0);
-  }
-
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(197, 160, 89, 0);
-  }
-}
-
-/* Text Shimmer Effect */
-.event-title,
-h1.names,
-.parallax-content p {
-  background: linear-gradient(to right, #b31b1b 20%, #ff4d4d 50%, #b31b1b 80%);
-  background-size: 200% auto;
-  color: #b31b1b;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 5s linear infinite;
-  display: inline-block;
-}
-
-h1.names {
-  font-size: 2.4rem;
-  /* Reducido un poco más para elegancia */
-  /* Aún más pequeño para elegancia */
-  margin: 15px 0;
-  letter-spacing: 2px;
-}
-
-.names {
-  font-family: "Cinzel", serif;
-  /* Aseguramos fuente elegante */
-}
-
-@media (max-width: 480px) {
-  h1.names {
-    font-size: 1.6rem;
-    /* Ajuste para móvil */
-  }
-}
-
-@keyframes shimmer {
-  to {
-    background-position: 200% center;
-  }
-}
-
-/* Responsividad para móviles */
-@media (max-width: 480px) {
-  .book {
-    width: 92vw !important;
-    /* Casi todo el ancho */
-    height: 75vh !important;
-    /* Casi todo el alto */
-    max-width: 400px !important;
-    max-height: 580px !important;
-    margin-left: 25px !important;
-  }
-
-  .page-text {
-    font-size: 1.7rem !important;
-    /* Texto muy grande en móvil */
-    padding: 0 5px;
-    line-height: 1.1 !important;
-  }
-
-  .silhouette {
-    width: 70px !important;
-    /* Reducido para dar espacio al texto */
-    margin-bottom: 10px !important;
-  }
-}
-
-/* =========================
-   GALERÍA DE FOTOS (MOSAICO)
-   ========================= */
-
-#gallery-section {
-  padding: 4rem 1rem;
-  text-align: center;
-}
-
-.gallery-title {
-  font-family: "Pinyon Script", cursive;
-  font-size: 4rem;
-  color: #b31b1b;
-  margin-bottom: 2.5rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
+/* GALLERY */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-auto-rows: 200px;
   grid-gap: 12px;
   grid-auto-flow: dense;
+  padding: 2rem;
 }
 
 .gallery-item {
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Efecto Mosaico dinámico */
 .gallery-item:nth-child(3n) {
   grid-column: span 2;
 }
@@ -1216,31 +525,108 @@ h1.names {
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease;
-  filter: sepia(0.2) contrast(1.1);
-}
-
-.gallery-item:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(201, 162, 77, 0.3);
-  z-index: 10;
 }
 
 .gallery-item:hover img {
   transform: scale(1.1);
-  filter: sepia(0) contrast(1.2);
 }
 
-@media (max-width: 480px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 150px;
+/* FAMILY SECTION */
+.family-section {
+  padding: 3rem 1rem;
+  color: #B8860B;
+  font-family: "Cinzel", serif;
+}
+
+.family-intro {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+}
+
+.family-intro::before,
+.family-intro::after {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 1px;
+  background: #B8860B;
+  vertical-align: middle;
+  margin: 0 15px;
+}
+
+.parents-group {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.parents-col {
+  min-width: 250px;
+}
+
+.names {
+  color: #4a0e0e;
+  font-size: 1.4rem;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .book {
+    width: 300px;
+    height: 450px;
+    margin-left: 0;
   }
 
-  .gallery-item:nth-child(3n) {
-    grid-column: span 1;
+  .parallax-content {
+    font-size: 2.5rem;
+    padding: 15px 30px;
   }
 
-  .gallery-title {
-    font-size: 3rem;
+  .signature {
+    font-size: 3.5rem;
+  }
+
+  .fotomation-bg {
+    width: 70px;
+    opacity: 0.1;
+  }
+
+  .photo-strip {
+    width: 70px;
+    height: 100px;
+  }
+
+  .parallax-section {
+    background-attachment: scroll;
+    height: 250px;
+  }
+}
+
+@keyframes pulseButton {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(179, 27, 27, 0.4);
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 5px rgba(179, 27, 27, 0);
+  }
+}
+
+@keyframes letterReveal {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
