@@ -115,22 +115,18 @@ function endIntro() {
 
     // Limpieza portal
     setTimeout(() => {
-
       portal.style.display = "none";
       document.body.style.overflow = "auto";
 
-      setTimeout(() => {
-        window.scrollTo({
-          top: content.offsetTop + 100,
-          behavior: "smooth"
-        });
-      }, 1000);
-
+      // Explosion de corazones rojos al abrir
+      for (let i = 0; i < 30; i++) {
+        setTimeout(createHeart, i * 100);
+      }
     }, 2500);
 
   }, 800);
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  // Removido auto-scroll al inicio
 }
 
 // ==========================
@@ -219,29 +215,3 @@ function startColibri() {
   setTimeout(fly, 1000);
 }
 
-// ==========================
-// TOGGLE GALERÍA
-// ==========================
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleBtn = document.getElementById("toggle-gallery");
-  const gallery = document.getElementById("photo-gallery");
-
-  if (toggleBtn && gallery) {
-    toggleBtn.addEventListener("click", () => {
-      const isHidden = gallery.style.display === "none";
-
-      if (isHidden) {
-        gallery.style.display = "flex";
-        toggleBtn.textContent = "Cerrar Memories";
-
-        // Scroll suave a la galería
-        setTimeout(() => {
-          gallery.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 100);
-      } else {
-        gallery.style.display = "none";
-        toggleBtn.textContent = "Memories";
-      }
-    });
-  }
-});
