@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (isHidden) {
         gallery.classList.remove("hidden-gallery");
         gallery.classList.add("visible-gallery");
-        toggleBtn.textContent = "Ocultar Fotos";
+        toggleBtn.textContent = "Cerrar Memories";
 
         // Scroll suave a la galería
         setTimeout(() => {
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         gallery.classList.add("hidden-gallery");
         gallery.classList.remove("visible-gallery");
-        toggleBtn.textContent = "Ver Fotos";
+        toggleBtn.textContent = "Memories";
       }
     });
   }
