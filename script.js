@@ -4,43 +4,43 @@
 
 const music = document.getElementById("bg-music");
 const portalInit = document.getElementById("portal-init");
-const scenes = document.querySelectorAll(".scene");
-const storyText = document.getElementById("story-text");
 const skipBtn = document.getElementById("skip");
 const intro = document.getElementById("intro");
 const portal = document.getElementById("portal");
 
 const pages = document.querySelectorAll(".page");
 
+let heartInterval = null;
+let currentScene = 0;
+
+// ==========================
+// LIBRO / HISTORIA
+// ==========================
+
 function showScene(index) {
-  // 1. Flipear la página anterior
+
   if (index > 0) {
     pages[index - 1].classList.add("flipped");
   }
 
-  // 2. Ajuste de Z-Index para profundidad
   pages.forEach((p, i) => {
-    if (i < index) {
-      p.style.zIndex = i;
-    } else {
-      p.style.zIndex = pages.length - i;
-    }
+    p.style.zIndex = i < index ? i : pages.length - i;
   });
 }
 
 function openInvitation() {
+
   console.log("Iniciando experiencia...");
 
-  // 1. Reproducir Música
+  // Música
   music.currentTime = 0;
   music.volume = 1.0;
-  music.play().catch(e => console.log("Error de audio:", e));
+  music.play().catch(e => console.log("Audio bloqueado:", e));
 
-  // 2. Ocultar Contenido Inicial (Corazón/Botón)
+  // Ocultar pantalla inicial
   portalInit.style.opacity = "0";
   portalInit.style.pointerEvents = "none";
 
-  // 3. Mostrar Historia (Intro)
   setTimeout(() => {
     portalInit.style.display = "none";
     intro.classList.remove("hidden");
@@ -49,9 +49,9 @@ function openInvitation() {
 }
 
 function beginIntro() {
+
   currentScene = 0;
 
-  // Reset book states
   pages.forEach((p, i) => {
     p.classList.remove("flipped");
     p.style.setProperty("--index", i);
@@ -60,62 +60,67 @@ function beginIntro() {
   showScene(0);
 
   const introInterval = setInterval(() => {
+
     currentScene++;
+
     if (currentScene < pages.length) {
       showScene(currentScene);
     } else {
       clearInterval(introInterval);
       setTimeout(endIntro, 1500);
     }
+
   }, 5000);
 
-  // Skip logic
   skipBtn.onclick = () => {
     clearInterval(introInterval);
     endIntro();
   };
 }
 
+// ==========================
+// FINAL INTRO
+// ==========================
+
 function endIntro() {
+
   console.log("Revelando invitación final...");
 
-  // Ocultar historia suavemente
   intro.style.opacity = "0";
 
   setTimeout(() => {
-    intro.style.display = "none";
 
-    // 4. ABRIR LAS PUERTAS
+    intro.style.display = "none";
     portal.classList.add("opened");
 
-    // 5. MOSTRAR CONTENIDO CARTA
     const content = document.getElementById("content");
     content.classList.remove("hidden");
 
-    // Animaciones de texto en cascada
+    // Animaciones cascada
     const revealedItems = document.querySelectorAll(".reveal");
+
     revealedItems.forEach((item, index) => {
       setTimeout(() => {
         item.classList.add("active");
       }, index * 150);
     });
 
-    // Iniciar colibrí y corazones (más frecuentes y rojos)
-    startColibri();
-    if (typeof startHearts === 'undefined') {
-      setInterval(() => createHeart(true), 300); // Casi el doble de corazones y rojos
+    // ✅ CORAZONES CONTROLADOS (ANTES CONGELABA)
+    if (!heartInterval) {
+      heartInterval = setInterval(createHeart, 1500);
     }
+
+    startColibri();
 
     // Limpieza portal
     setTimeout(() => {
+
       portal.style.display = "none";
       document.body.style.overflow = "auto";
 
-      // Auto-scroll suave para guiar al invitado
       setTimeout(() => {
-        const topOfContent = content.offsetTop + 100;
         window.scrollTo({
-          top: topOfContent,
+          top: content.offsetTop + 100,
           behavior: "smooth"
         });
       }, 1000);
@@ -128,67 +133,87 @@ function endIntro() {
 }
 
 // ==========================
-// CORAZONES FLOTANTES
+// CORAZONES OPTIMIZADOS
 // ==========================
-function createHeart(isRed = false) {
+
+function createHeart() {
+
   const heart = document.createElement("div");
-  heart.classList.add("heart");
-  if (isRed) {
-    heart.style.backgroundColor = "rgba(255, 40, 40, 0.8)"; // Rojo intenso
-    heart.style.boxShadow = "0 0 10px rgba(255, 0, 0, 0.5)";
-  }
+  heart.className = "heart";
+
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = Math.random() * 3 + 4 + "s"; // Un poco más rápido
+  heart.style.animationDuration = (Math.random() * 2 + 4) + "s";
+
   document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 8000);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 7000);
 }
 
 // ==========================
 // SCROLL ANIMATIONS
 // ==========================
-const observerOptions = {
-  threshold: 0.15,
-  rootMargin: "0px 0px -50px 0px"
-};
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries, obs) => {
+
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("active");
-      observer.unobserve(entry.target);
+      obs.unobserve(entry.target);
     }
   });
-}, observerOptions);
 
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+}, {
+  threshold: 0.15,
+  rootMargin: "0px 0px -50px 0px"
+});
+
+document.querySelectorAll(".reveal")
+  .forEach(el => observer.observe(el));
+
 
 // ==========================
-// HUMMINGBIRD FLIGHT LOGIC
+// COLIBRÍ OPTIMIZADO (GPU)
 // ==========================
+
 const colibri = document.querySelector(".colibri");
 
 function getRandomPosition() {
-  const padding = 50;
-  const x = Math.random() * (window.innerWidth - padding * 2) + padding;
-  const y = Math.random() * (window.innerHeight - padding * 2) + padding;
-  return { x, y };
+
+  const padding = 60;
+
+  return {
+    x: Math.random() * (window.innerWidth - padding * 2) + padding,
+    y: Math.random() * (window.innerHeight - padding * 2) + padding
+  };
 }
 
 function fly() {
+
+  if (!colibri) return;
+
   const { x, y } = getRandomPosition();
-  const currentX = parseFloat(colibri.style.left) || 0;
-  colibri.style.transform = x > currentX ? "scaleX(1)" : "scaleX(-1)";
-  colibri.style.left = `${x}px`;
-  colibri.style.top = `${y}px`;
+
+  // GPU acceleration
+  colibri.style.willChange = "transform";
+
+  colibri.style.transform =
+    `translate(${x}px, ${y}px) scaleX(${Math.random() > 0.5 ? 1 : -1})`;
+
   const duration = Math.random() * 3 + 4;
-  colibri.style.transition = `all ${duration}s ease-in-out`;
-  setTimeout(fly, duration * 1000 + Math.random() * 2000 + 1000);
+
+  colibri.style.transition = `transform ${duration}s ease-in-out`;
+
+  setTimeout(fly, duration * 1000 + 1500);
 }
 
 function startColibri() {
+
   if (!colibri) return;
+
   colibri.style.display = "block";
-  colibri.style.left = "-100px";
-  colibri.style.top = "50%";
+  colibri.style.transform = "translate(-100px, 50vh)";
+
   setTimeout(fly, 1000);
 }
