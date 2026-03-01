@@ -218,3 +218,32 @@ function startColibri() {
 
   setTimeout(fly, 1000);
 }
+
+// ==========================
+// TOGGLE GALERÍA
+// ==========================
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("toggle-gallery");
+  const gallery = document.getElementById("photo-gallery");
+
+  if (toggleBtn && gallery) {
+    toggleBtn.addEventListener("click", () => {
+      const isHidden = gallery.classList.contains("hidden-gallery");
+
+      if (isHidden) {
+        gallery.classList.remove("hidden-gallery");
+        gallery.classList.add("visible-gallery");
+        toggleBtn.textContent = "Ocultar Fotos";
+
+        // Scroll suave a la galería
+        setTimeout(() => {
+          gallery.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      } else {
+        gallery.classList.add("hidden-gallery");
+        gallery.classList.remove("visible-gallery");
+        toggleBtn.textContent = "Ver Fotos";
+      }
+    });
+  }
+});

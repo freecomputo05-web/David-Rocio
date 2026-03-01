@@ -530,6 +530,14 @@ h1.names {
 }
 
 /* POLAROID GALLERY */
+.hidden-gallery {
+  display: none !important;
+}
+
+.visible-gallery {
+  display: flex !important;
+}
+
 .polaroid-gallery {
   display: flex;
   flex-wrap: wrap;
