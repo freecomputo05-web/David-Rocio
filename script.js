@@ -94,7 +94,16 @@ function endIntro() {
     intro.style.display = "none";
     portal.classList.add("opened");
 
+    // Forzar scroll arriba para evitar saltos
+    window.scrollTo(0, 0);
+
+    // ✅ EXPLOSIÓN DE CORAZONES ROJOS (Justo al abrir)
+    for (let i = 0; i < 40; i++) {
+      setTimeout(createHeart, i * 80);
+    }
+
     const content = document.getElementById("content");
+
     content.classList.remove("hidden");
 
     // Animaciones cascada
@@ -117,11 +126,6 @@ function endIntro() {
     setTimeout(() => {
       portal.style.display = "none";
       document.body.style.overflow = "auto";
-
-      // Explosion de corazones rojos al abrir
-      for (let i = 0; i < 30; i++) {
-        setTimeout(createHeart, i * 100);
-      }
     }, 2500);
 
   }, 800);

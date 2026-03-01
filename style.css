@@ -532,13 +532,15 @@ h1.names {
 /* HEARTS ANIMATION */
 .heart {
   position: fixed;
+  bottom: -50px;
+  /* Empezar fuera de la pantalla */
   width: 20px;
   height: 20px;
   background: #b31b1b;
   transform: rotate(-45deg);
   pointer-events: none;
   z-index: 10001;
-  animation: heartFloat 5s ease-in forwards;
+  animation: heartFloat 4s ease-in forwards;
 }
 
 .heart::before,
@@ -563,12 +565,17 @@ h1.names {
 
 @keyframes heartFloat {
   0% {
-    transform: rotate(-45deg) translateY(0) scale(1);
+    transform: rotate(-45deg) translateY(0) scale(0.5);
+    opacity: 0;
+  }
+
+  20% {
     opacity: 1;
+    transform: rotate(-45deg) translateY(-10vh) scale(1.2);
   }
 
   100% {
-    transform: rotate(-45deg) translateY(-100vh) scale(0.5);
+    transform: rotate(-45deg) translateY(-110vh) scale(0.8);
     opacity: 0;
   }
 }
