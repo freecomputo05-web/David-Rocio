@@ -12,7 +12,7 @@ body {
 /* INTRO (Libro 3D) */
 #intro {
   display: flex;
-  /* Corregido para que no aparezca antes */
+  /* Base display */
   position: absolute;
   inset: 0;
   flex-direction: column;
@@ -22,6 +22,11 @@ body {
   background: transparent;
   perspective: 2000px;
   transition: opacity 1s ease;
+}
+
+#intro.hidden {
+  display: none !important;
+  /* Force hide by ID specificity */
 }
 
 .book {
@@ -191,8 +196,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 200;
-  /* Prioridad absoluta */
+  z-index: 300;
+  /* Much higher than intro (50) */
   text-align: center;
   width: 100%;
   transition: all 1s ease;
