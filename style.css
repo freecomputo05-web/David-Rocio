@@ -454,7 +454,8 @@ iframe {
   padding: 100px 20px;
   display: flex;
   justify-content: center;
-  background: #0B0B0B;
+  background: #fffcf9;
+  /* Fondo crema */
   overflow: hidden;
 }
 
@@ -462,9 +463,11 @@ iframe {
   max-width: 820px;
   width: 100%;
   padding: 70px 55px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(201, 162, 77, 0.45);
-  box-shadow: 0 0 40px rgba(201, 162, 77, 0.08);
+  background: #fffefb;
+  /* Blanco suave */
+  border: 1px solid rgba(179, 27, 27, 0.2);
+  /* Borde rojo suave */
+  box-shadow: 0 0 50px rgba(179, 27, 27, 0.05);
   animation: letterReveal 1.6s ease forwards;
 }
 
