@@ -214,7 +214,7 @@ function startColibri() {
   if (!colibri) return;
 
   colibri.style.display = "block";
-  colibri.style.transform = "translate(-100px, 50vh)";
+  colibri.style.transform = "translate(110vw, -10vh)";
 
   setTimeout(fly, 1000);
 }
