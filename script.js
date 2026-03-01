@@ -171,3 +171,4 @@ const observer = new IntersectionObserver((entries, obs) => {
 
 
 
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));

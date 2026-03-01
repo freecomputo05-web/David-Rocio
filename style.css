@@ -284,19 +284,22 @@ body {
   display: block;
   margin: 2rem auto;
   text-align: center;
-  /* Metallic Gradient */
+  /* High Contrast Metallic Gradient */
   background: linear-gradient(to bottom,
       #cf9e3c 0%,
-      #f5e27d 25%,
-      #c8a248 50%,
-      #e4b041 75%,
+      #f5e27d 22%,
+      #ffffff 45%,
+      /* Brillo máximo tipo espejo */
+      #e4b041 50%,
+      #c8a248 70%,
       #7f5c1a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #cbad6d;
+  line-height: 1.2;
 
-  /* 3D Extrusion using multiple shadows */
+  /* Deep 3D Extrusion */
   text-shadow:
     0 1px 0 #9e7f33,
     0 2px 0 #8c702d,
@@ -311,20 +314,21 @@ body {
     0 10px 10px rgba(0, 0, 0, .2),
     0 20px 20px rgba(0, 0, 0, .15);
 
-  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.5));
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.7));
 }
 
 .variant-cursive {
-  font-family: "Pinyon Script", cursive;
-  font-size: 5.5rem;
+  font-family: "Pinyon Script", cursive !important;
+  font-size: 6rem;
   font-weight: bold;
 }
 
 .variant-classic {
-  font-family: "Cinzel", serif;
-  font-size: 3.5rem;
+  font-family: "Cinzel", serif !important;
+  font-size: 4rem;
   font-weight: 700;
-  letter-spacing: 5px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
@@ -630,6 +634,7 @@ h1.names {
     transform: rotate(-45deg) translateY(-10vh) scale(1.2);
   }
 
+  /* Subir recto sin desviarse lateralmente */
   100% {
     transform: rotate(-45deg) translateY(-110vh) scale(0.8);
     opacity: 0;
