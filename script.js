@@ -192,7 +192,7 @@ function startCinematicScroll() {
     if (!isAutoScrolling) return;
 
     if (!isPaused) {
-      scrollPos += 0.5; // Velocidad muy lenta
+      scrollPos += 0.2; // Velocidad aún más lenta
       window.scrollTo(0, scrollPos);
 
       // Detener si llega al final
@@ -215,7 +215,7 @@ function handleInteraction() {
   pauseTimeout = setTimeout(() => {
     isPaused = false;
     scrollPos = window.scrollY; // Ajustar a la posición actual antes de reanudar
-  }, 5000);
+  }, 4000);
 }
 
 // Escuchar clics en botones para pausar

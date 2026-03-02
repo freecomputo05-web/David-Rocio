@@ -369,18 +369,27 @@ h1.names {
 
 .map-link {
   display: inline-block;
-  margin-top: 14px;
-  padding: 8px 20px;
-  color: #b31b1b;
-  border: 1px solid #b31b1b;
+  margin-top: 20px;
+  padding: 15px 45px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #fff;
+  background: linear-gradient(135deg, #b31b1b, #8a1515);
+  border: 2px solid #d4cbb3;
+  border-radius: 30px;
   text-decoration: none;
-  transition: all 0.4s ease;
-  animation: pulseButton 2s infinite;
+  box-shadow: 0 4px 15px rgba(179, 27, 27, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: pulseButtonEnhanced 2.5s infinite;
 }
 
 .map-link:hover {
-  background: #b31b1b;
+  background: linear-gradient(135deg, #cc2020, #a11a1a);
   color: #fff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(179, 27, 27, 0.6);
+  border-color: #f5efde;
 }
 
 .signature {
@@ -646,17 +655,15 @@ h1.names {
   }
 }
 
-@keyframes pulseButton {
+@keyframes pulseButtonEnhanced {
 
   0%,
   100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(179, 27, 27, 0.4);
+    box-shadow: 0 0 0 0 rgba(179, 27, 27, 0.6);
   }
 
   50% {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px 5px rgba(179, 27, 27, 0);
+    box-shadow: 0 0 25px 10px rgba(179, 27, 27, 0);
   }
 }
 
