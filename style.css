@@ -326,7 +326,7 @@ body {
 
 h1.names {
   font-family: "Cinzel", serif;
-  font-size: 2.2rem;
+  font-size: 2.8rem;
   letter-spacing: 4px;
   margin: 15px 0 40px;
   color: #b31b1b;
@@ -336,12 +336,12 @@ h1.names {
 .names .amp {
   color: #fff;
   font-family: 'Pinyon Script', cursive;
-  font-size: 5.5rem;
+  font-size: 6.5rem;
   margin: 0 10px;
 }
 
 .letter-text {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   line-height: 2;
   margin-bottom: 25px;
   color: #4a0e0e;
@@ -357,12 +357,12 @@ h1.names {
   margin: 40px 0;
   color: #B8860B;
   letter-spacing: 8px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   opacity: 0.9;
 }
 
 .event-title {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   margin-bottom: 10px;
   color: #b31b1b;
 }
@@ -394,7 +394,7 @@ h1.names {
 
 .signature {
   font-family: "Pinyon Script", cursive;
-  font-size: 5rem;
+  font-size: 6rem;
   color: #b31b1b;
 }
 
@@ -420,7 +420,7 @@ h1.names {
   border: 2px solid rgba(179, 27, 27, 0.4);
   color: #b31b1b;
   font-family: "Pinyon Script", cursive;
-  font-size: 4.5rem;
+  font-size: 5.5rem;
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -592,6 +592,7 @@ h1.names {
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: 700;
+  font-size: 1.5rem;
   margin: 2rem 0 1rem;
 }
 
@@ -619,7 +620,7 @@ h1.names {
 
 .names {
   color: #4a0e0e;
-  font-size: 1.7rem;
+  font-size: 2rem;
   margin: 0.5rem 0;
 }
 
