@@ -125,6 +125,9 @@ function endIntro() {
     setTimeout(() => {
       portal.style.display = "none";
       document.body.style.overflow = "auto";
+
+      // Iniciar el scroll cinematográfico después de abrir
+      setTimeout(startCinematicScroll, 1000);
     }, 2500);
 
   }, 800);
@@ -170,5 +173,60 @@ const observer = new IntersectionObserver((entries, obs) => {
 });
 
 
+
+// ==========================
+// CINEMATIC AUTO-SCROLL
+// ==========================
+
+let scrollPos = 0;
+let isAutoScrolling = false;
+let isPaused = false;
+let pauseTimeout = null;
+
+function startCinematicScroll() {
+  if (isAutoScrolling) return;
+  isAutoScrolling = true;
+  scrollPos = window.scrollY;
+
+  function scrollStep() {
+    if (!isAutoScrolling) return;
+
+    if (!isPaused) {
+      scrollPos += 0.5; // Velocidad muy lenta
+      window.scrollTo(0, scrollPos);
+
+      // Detener si llega al final
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        isAutoScrolling = false;
+        return;
+      }
+    }
+    requestAnimationFrame(scrollStep);
+  }
+  requestAnimationFrame(scrollStep);
+}
+
+function handleInteraction() {
+  if (!isAutoScrolling) return;
+
+  isPaused = true;
+  if (pauseTimeout) clearTimeout(pauseTimeout);
+
+  pauseTimeout = setTimeout(() => {
+    isPaused = false;
+    scrollPos = window.scrollY; // Ajustar a la posición actual antes de reanudar
+  }, 5000);
+}
+
+// Escuchar clics en botones para pausar
+document.addEventListener("click", (e) => {
+  if (e.target.tagName === "BUTTON" || e.target.closest("button") || e.target.tagName === "A" || e.target.closest("a")) {
+    handleInteraction();
+  }
+});
+
+// Detener totalmente si el usuario hace scroll manual fuerte (opcional)
+window.addEventListener("wheel", handleInteraction, { passive: true });
+window.addEventListener("touchstart", handleInteraction, { passive: true });
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
