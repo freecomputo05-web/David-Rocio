@@ -330,15 +330,54 @@ h1.names {
   font-size: 2.8rem;
   letter-spacing: 4px;
   margin: 15px 0 40px;
-  color: #b31b1b;
-  text-shadow: 0 0 10px rgba(179, 27, 27, 0.2);
+
+  /* High Contrast 3D Metallic Gold Gradient */
+  background: linear-gradient(to bottom,
+      #cf9e3c 0%,
+      #f5e27d 22%,
+      #ffffff 45%,
+      #e4b041 50%,
+      #c8a248 70%,
+      #7f5c1a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #cbad6d;
+  line-height: 1.3;
+
+  /* Deep 3D Extrusion */
+  text-shadow:
+    0 1px 0 #9e7f33,
+    0 2px 0 #8c702d,
+    0 3px 0 #7a6227,
+    0 4px 0 #695421,
+    0 5px 0 #57461b,
+    0 6px 1px rgba(0, 0, 0, .1),
+    0 0 5px rgba(0, 0, 0, .1),
+    0 1px 3px rgba(0, 0, 0, .3),
+    0 3px 5px rgba(0, 0, 0, .2),
+    0 5px 10px rgba(0, 0, 0, .25),
+    0 10px 10px rgba(0, 0, 0, .2),
+    0 15px 15px rgba(0, 0, 0, .15);
+
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7));
 }
 
 .names .amp {
-  color: #fff;
+  display: inline-block;
   font-family: 'Pinyon Script', cursive;
   font-size: 6.5rem;
   margin: 0 10px;
+
+  /* Glowing Ruby Red */
+  background: radial-gradient(circle at 30% 30%, #ff4d4d, #b31b1b, #8a1515);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #b31b1b;
+
+  filter: drop-shadow(0 0 8px rgba(179, 27, 27, 0.6));
+  animation: pulseAmpersand 2s ease-in-out infinite;
 }
 
 .letter-text,
@@ -682,6 +721,22 @@ h1.names {
 
   50% {
     box-shadow: 0 0 25px 10px rgba(179, 27, 27, 0);
+  }
+}
+
+@keyframes pulseAmpersand {
+
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px rgba(179, 27, 27, 0.6));
+  }
+
+  50% {
+    transform: scale(1.08);
+    /* Latido */
+    filter: drop-shadow(0 0 15px rgba(255, 77, 77, 0.9));
+    /* Brillo intenso */
   }
 }
 
